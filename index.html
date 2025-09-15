@@ -12,7 +12,7 @@
       --panel-2: #1a1f36;
       --text: #e8ecf3;
       --muted: #9aa3b2;
-      --link: #3b82f6;
+      --link: #3b82f6; /* medium blue for visibility on dark bg */
       --ring: rgba(59,130,246,.3);
       --radius: 18px;
       --shadow: 0 10px 28px rgba(0,0,0,.28);
@@ -22,6 +22,7 @@
     a{color:var(--link);text-decoration:none;font-weight:500}
     a:hover{text-decoration:underline}
 
+    /* Header / Nav */
     header{
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(10px) saturate(140%);
@@ -36,39 +37,37 @@
     nav a{padding:8px 12px;border-radius:10px;color:var(--text);opacity:.95}
     nav a:hover{background:rgba(255,255,255,.06);opacity:1}
 
-    .hero{padding: 36px 0 10px}
+    /* Card */
+    .hero{padding:36px 0 10px}
     .intro-card{
-      display: grid;
-      gap: 24px;
+      display:grid;
+      gap:24px;
       grid-template-columns: 0.9fr 1.1fr;
-      align-items: stretch;
-      background: var(--panel);
+      align-items:stretch;                 /* make image/text columns same height */
+      background:var(--panel);
       border:1px solid rgba(255,255,255,.06);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
     }
 
     .image-box{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 12px 34px rgba(0,0,0,.35);
+      width:100%;
+      height:100%;                         /* fill column height */
+      object-fit:cover;                    /* crop gently, no distortion */
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 12px 34px rgba(0,0,0,.35);
     }
 
     .about h2{margin:0 0 8px;font-size:1.55rem}
     .about h2 i{font-style:normal;color:#fff}
     .about p{margin:10px 0;color:var(--text)}
 
-    /* Interests inline within About */
+    /* Interests INSIDE the same card, under both columns */
     .interests{
-      margin-top: 20px;
-      padding: 0;
-      border: none;
-      background: none;
-      box-shadow: none;
+      grid-column:1 / -1;                  /* span full width of the grid */
+      margin-top:20px;
     }
     .interests h3{margin:0 0 10px;font-size:1.1rem;color:var(--muted)}
     .pillset{display:flex;flex-wrap:wrap;gap:12px}
@@ -78,26 +77,28 @@
       padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03)
     }
 
+    /* Contact */
     #contact{
-      margin: 26px 0 40px;
-      background: var(--panel-2);
+      margin:26px 0 40px;
+      background:var(--panel-2);
       border:1px solid rgba(255,255,255,.06);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      box-shadow: var(--shadow);
+      border-radius:var(--radius);
+      padding:18px 20px;
+      box-shadow:var(--shadow);
     }
-    #contact h3{margin: 0 0 8px}
+    #contact h3{margin:0 0 8px}
     #contact a{
       display:inline-block;
-      padding:6px 10px; border-radius:10px;
-      background: rgba(59,130,246,.08);
+      padding:6px 10px;border-radius:10px;
+      background:rgba(59,130,246,.08);
       border:1px solid var(--ring);
     }
 
-    footer{color:var(--muted);font-size:.9rem;margin: 18px 0 28px}
+    footer{color:var(--muted);font-size:.9rem;margin:18px 0 28px}
 
+    /* Mobile: stack columns, let image height be natural */
     @media (max-width: 899px){
-      .intro-card{grid-template-columns: 1fr}
+      .intro-card{grid-template-columns:1fr}
       .image-box{height:auto}
     }
   </style>
@@ -126,45 +127,45 @@
           <h2><i>A Little About Me…</i></h2>
 
           <p>
-            I’m a fourth-year PhD student at 
-            <a href="https://www.columbia.edu/" target="_blank" rel="noopener"><strong>Columbia University</strong></a> 
-            in the Department of Industrial Engineering &amp; Operations Research 
-            (<a href="https://ieor.columbia.edu/" target="_blank" rel="noopener"><strong>IEOR</strong></a>), 
-            advised by 
-            <a href="https://www.columbia.edu/~khl2114/" target="_blank" rel="noopener"><strong>Prof. Henry Lam</strong></a>. 
+            I’m a fourth-year PhD student at
+            <a href="https://www.columbia.edu/" target="_blank" rel="noopener"><strong>Columbia University</strong></a>
+            in the Department of Industrial Engineering &amp; Operations Research
+            (<a href="https://ieor.columbia.edu/" target="_blank" rel="noopener"><strong>IEOR</strong></a>),
+            advised by
+            <a href="https://www.columbia.edu/~khl2114/" target="_blank" rel="noopener"><strong>Prof. Henry Lam</strong></a>.
             My research focuses on uncertainty quantification and decision-making under uncertainty—developing methods that remain reliable when data or environments shift.
           </p>
 
           <p>
-            My academic background includes bachelor’s and master’s degrees in Statistics from the 
-            <a href="https://www.isical.ac.in/" target="_blank" rel="noopener"><strong>Indian Statistical Institute, Kolkata</strong></a>. 
-            I bring industry experience from my time at 
-            <a href="https://www.capitalone.com/" target="_blank" rel="noopener"><strong>Capital One</strong></a>, 
-            where I worked on modeling loan default rates and developed tools for handling missing values in decision-tree models. 
-            I also spent a summer working with the 
-            <a href="https://www.nasa.gov/langley/" target="_blank" rel="noopener"><strong>NASA Langley Research Center</strong></a>, 
+            My academic background includes bachelor’s and master’s degrees in Statistics from the
+            <a href="https://www.isical.ac.in/" target="_blank" rel="noopener"><strong>Indian Statistical Institute, Kolkata</strong></a>.
+            I bring industry experience from my time at
+            <a href="https://www.capitalone.com/" target="_blank" rel="noopener"><strong>Capital One</strong></a>,
+            where I worked on modeling loan default rates and developed tools for handling missing values in decision-tree models.
+            I also spent a summer working with the
+            <a href="https://www.nasa.gov/langley/" target="_blank" rel="noopener"><strong>NASA Langley Research Center</strong></a>,
             where I focused on multivariate flight data modeling.
           </p>
 
           <p>
-            Outside work, I enjoy chess, table tennis, and puzzle solving. 
-            I also love to travel and often spend time on long walks through new neighborhoods, 
+            Outside work, I enjoy chess, table tennis, and puzzle solving.
+            I also love to travel and often spend time on long walks through new neighborhoods,
             enjoying the chance to explore and observe everyday life in different places.
           </p>
 
           <p>
             If you’re exploring robustness, data-driven optimization, or adjacent topics, I’m always open to a conversation.
           </p>
+        </div>
 
-          <!-- Interests now part of About -->
-          <div class="interests">
-            <h3>Interests</h3>
-            <div class="pillset" aria-label="Interests">
-              <span class="pill">Uncertainty Quantification</span>
-              <span class="pill">Data-Driven Optimization</span>
-              <span class="pill">Robust Decision-Making</span>
-              <span class="pill">Computational Statistics</span>
-            </div>
+        <!-- Interests: inside the same card, below both columns -->
+        <div class="interests">
+          <h3>Interests</h3>
+          <div class="pillset" aria-label="Interests">
+            <span class="pill">Uncertainty Quantification</span>
+            <span class="pill">Data-Driven Optimization</span>
+            <span class="pill">Robust Decision-Making</span>
+            <span class="pill">Computational Statistics</span>
           </div>
         </div>
       </div>
