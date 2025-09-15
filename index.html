@@ -62,14 +62,21 @@
     .about h2 i{font-style:normal;color:#fff}
     .about p{margin:10px 0;color:var(--text)}
 
-    /* Interests section */
-    .interests{margin-top:20px}
+    /* Interests section now full-width under the card */
+    .interests{
+      margin:24px 0 0;
+      background: var(--panel-2);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      padding:16px 20px;
+      box-shadow: var(--shadow);
+    }
     .interests h3{margin:0 0 10px;font-size:1.1rem;color:var(--muted)}
-    .pillset{display:flex; flex-wrap:wrap; gap:8px}
+    .pillset{display:flex;flex-wrap:wrap;gap:12px}
     .pill{
-      font-size:.9rem; color:var(--text); opacity:.9;
+      font-size:.9rem;color:var(--text);opacity:.9;
       border:1px solid rgba(255,255,255,.08);
-      padding:6px 10px; border-radius:999px; background: rgba(255,255,255,.03)
+      padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03)
     }
 
     #contact{
@@ -89,6 +96,12 @@
     }
 
     footer{color:var(--muted);font-size:.9rem;margin: 18px 0 28px}
+
+    /* Responsive: stack image/text on small screens and let image height be natural */
+    @media (max-width: 899px){
+      .intro-card{grid-template-columns: 1fr}
+      .image-box{height:auto}
+    }
   </style>
 </head>
 <body>
@@ -111,47 +124,50 @@
           <img src="assets/pic_1.png" alt="Portrait of Arindam Roy Chowdhury" class="image-box" />
         </figure>
 
-<div class="about">
-  <h2><i>A Little About Me…</i></h2>
-  
-  <p>
-    I’m a fourth-year PhD student at 
-    <a href="https://www.columbia.edu/" target="_blank" rel="noopener"><strong>Columbia University</strong></a> 
-    in the Department of Industrial Engineering &amp; Operations Research 
-    (<a href="https://ieor.columbia.edu/" target="_blank" rel="noopener"><strong>IEOR</strong></a>), 
-    advised by 
-    <a href="https://www.columbia.edu/~khl2114/" target="_blank" rel="noopener"><strong>Prof. Henry Lam</strong></a>. 
-    My research focuses on uncertainty quantification and decision-making under uncertainty—developing methods that remain reliable when data or environments shift.
-  </p>
-<p>
-  My academic background includes bachelor’s and master’s degrees in Statistics from the 
-  <a href="https://www.isical.ac.in/" target="_blank" rel="noopener"><strong>Indian Statistical Institute, Kolkata</strong></a>. 
-  I bring industry experience from my time at 
-  <a href="https://www.capitalone.com/" target="_blank" rel="noopener"><strong>Capital One</strong></a>, 
-  where I worked on modeling loan default rates and developed tools for handling missing values in decision-tree models. 
-  I also spent a summer working with 
-  <a href="https://www.nasa.gov/langley/" target="_blank" rel="noopener"><strong>NASA Langley Research Centre</strong></a>, 
-  where I focussed on multivariate flight data modeling.
-</p>
+        <div class="about">
+          <h2><i>A Little About Me…</i></h2>
 
-  <p>
-    Outside work, I enjoy chess, table tennis, and puzzle solving. I also love to travel—long walks through new neighborhoods often nudge how I think about structure, systems, and the way people move through the world.
-  </p>
+          <p>
+            I’m a fourth-year PhD student at 
+            <a href="https://www.columbia.edu/" target="_blank" rel="noopener"><strong>Columbia University</strong></a> 
+            in the Department of Industrial Engineering &amp; Operations Research 
+            (<a href="https://ieor.columbia.edu/" target="_blank" rel="noopener"><strong>IEOR</strong></a>), 
+            advised by 
+            <a href="https://www.columbia.edu/~khl2114/" target="_blank" rel="noopener"><strong>Prof. Henry Lam</strong></a>. 
+            My research focuses on uncertainty quantification and decision-making under uncertainty—developing methods that remain reliable when data or environments shift.
+          </p>
 
-  <p>
-    If you’re exploring robustness, data-driven optimization, or adjacent topics, I’m always open to a conversation.
-  </p>
-</div>
+          <p>
+            My academic background includes bachelor’s and master’s degrees in Statistics from the 
+            <a href="https://www.isical.ac.in/" target="_blank" rel="noopener"><strong>Indian Statistical Institute, Kolkata</strong></a>. 
+            I bring industry experience from my time at 
+            <a href="https://www.capitalone.com/" target="_blank" rel="noopener"><strong>Capital One</strong></a>, 
+            where I worked on modeling loan default rates and developed tools for handling missing values in decision-tree models. 
+            I also spent a summer working with the 
+            <a href="https://www.nasa.gov/langley/" target="_blank" rel="noopener"><strong>NASA Langley Research Center</strong></a>, 
+            where I focused on multivariate flight data modeling.
+          </p>
 
-          <div class="interests">
-            <h3>Interests</h3>
-            <div class="pillset" aria-label="Interests">
-              <span class="pill">Uncertainty Quantification</span>
-              <span class="pill">Data-Driven Optimization</span>
-              <span class="pill">Robust Decision-Making</span>
-              <span class="pill">Computational Statistics</span>
-            </div>
-          </div>
+          <p>
+            Outside work, I enjoy chess, table tennis, and puzzle solving. 
+            I also love to travel and often spend time on long walks through new neighborhoods, 
+            enjoying the chance to explore and observe everyday life in different places.
+          </p>
+
+          <p>
+            If you’re exploring robustness, data-driven optimization, or adjacent topics, I’m always open to a conversation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interests now full width beneath the card -->
+      <div class="interests">
+        <h3>Interests</h3>
+        <div class="pillset" aria-label="Interests">
+          <span class="pill">Uncertainty Quantification</span>
+          <span class="pill">Data-Driven Optimization</span>
+          <span class="pill">Robust Decision-Making</span>
+          <span class="pill">Computational Statistics</span>
         </div>
       </div>
     </section>
