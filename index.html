@@ -38,18 +38,22 @@
 
     .hero{padding: 36px 0 10px}
     .intro-card{
-      display:grid; gap:24px; grid-template-columns: 1fr;
-      background: var(--panel); border:1px solid rgba(255,255,255,.06);
-      border-radius: var(--radius); padding: 22px;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: stretch;        /* columns align in height */
+      background: var(--panel);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      padding: 22px;
       box-shadow: var(--shadow);
-    }
-    @media (min-width: 900px){
-      .intro-card{ grid-template-columns: 0.9fr 1.1fr; align-items:center }
     }
 
     .image-box{
-      width:100%; max-width:460px; aspect-ratio: 4 / 5; object-fit: cover;
-      border-radius: 16px; display:block; margin: 0 auto;
+      width: 100%;
+      height: 100%;                /* match column height */
+      object-fit: cover;           /* crops if needed */
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,.08);
       box-shadow: 0 12px 34px rgba(0,0,0,.35);
     }
