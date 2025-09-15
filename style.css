@@ -24,6 +24,7 @@ body {
   height: 100%;
   text-align: center;
   width: 100%;
+  font-size: 15px;
 }
  /* Header */
  header {
@@ -45,16 +46,18 @@ a:hover {
 
 
 header h1 {
-  margin: 0;
+  margin: .25;
 }
 
 header nav {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 header nav a {
   margin: 0 0.75rem;
+  padding: .5rem;
   color: var(--text-all);
+  font-size: 25px;
 }
 
 
@@ -130,10 +133,7 @@ section {
 }
 
 .image-text-wrapper {
-  display: grid;
-  grid-template-areas:
-  "menu content";
-  grid-template-columns: repeat(2, 1fr);
+  display:flex;
   gap: 5px;
   padding: 5px;
   max-width: 100%;
@@ -141,16 +141,17 @@ section {
   padding: 1rem;
 }
 
-.image-box img {
-  max-width: 100%;
+.image-box {
+  max-width: 400px;
   float: right;
   height: auto;
-  border-radius: 10%;
-  object-fit: cover;
-  height: 60%;
-  width: 60%; /* fixed or responsive width */
+  border-radius: 10px;
+  margin: 10px 10px 10px;
+  width: 50%; /* fixed or responsive width */
   box-shadow: 0 4px 10px rgba(31, 41, 51, 0.4);
+
 }
+
 
 .image-box img:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
@@ -219,7 +220,40 @@ section {
   text-decoration: underline;
 }
 
+.about-section {
+  width: 80%;       /* keeps lines from getting too long */
+  margin: .5rem auto;           /* center horizontally */
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-light);
+}
 
+.about-section p {
+  margin-bottom: 1.2em;
+  text-align: justify;
+}
+
+.about-section strong {
+  font-weight: 600;       /* for highlighting names or key terms */
+  color: var(--accent);
+}
+
+/* Optional: subtle first-line style */
+.about-section p:first-of-type::first-line {
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.research-section
+{
+  width: 80%;       /* keeps lines from getting too long */
+  margin: .5rem auto;         /* center horizontally */
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;       /* improves readability */
+  color: var(--text-light);
+  text-align: left;
+}
 @media (min-width: 600px) {
   .project-list {
     grid-template-columns: repeat(2, 1fr);
@@ -234,6 +268,10 @@ section {
     }
     .contact-grid {
       grid-template-columns: 1fr;
+    }
+    .about-section {
+      font-size: 16px;
+      line-height: 1.8;
     }
 }
 
