@@ -5,17 +5,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Research — Arindam Roy Chowdhury</title>
 
-  <!-- Minimal, embedded styles (can move to style.css if you prefer) -->
   <style>
     :root{
-      --bg:#0f1220;
-      --card:#161a2b;
-      --muted:#9aa3b2;
-      --text:#e8ecf3;
-      --accent:#6dd3ff;
-      --ring: rgba(109, 211, 255, .25);
-      --shadow: 0 8px 24px rgba(0,0,0,.25);
-      --radius: 16px;
+      --bg:#0f1220; --card:#161a2b; --muted:#9aa3b2; --text:#e8ecf3; --accent:#6dd3ff;
+      --ring: rgba(109, 211, 255, .25); --shadow: 0 8px 24px rgba(0,0,0,.25); --radius: 16px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
@@ -36,42 +29,30 @@
     nav a:hover{background:rgba(255,255,255,.06);opacity:1}
 
     main{padding:28px 0}
-    .intro{
-      margin:10px 0 26px;background:var(--card);border-radius:var(--radius);
-      padding:18px 20px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)
-    }
-    .grid{
-      display:grid;gap:22px;
-      grid-template-columns:1fr;
-    }
-    @media (min-width:900px){
-      .grid{grid-template-columns:1.2fr .8fr}
-      .stack-vert{grid-column:1 / -1}
-    }
-    section.block{
-      background:var(--card);border-radius:var(--radius);
-      padding:18px 18px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)
-    }
+    .intro{margin:10px 0 26px;background:var(--card);border-radius:var(--radius);padding:18px 20px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    .grid{display:grid;gap:22px;grid-template-columns:1fr}
+    @media (min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+
+    section.block{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
     h2{margin:4px 0 12px;font-size:1.35rem}
     .sub{color:var(--muted);font-size:.95rem;margin:0 0 10px}
     ul.clean{list-style:none;margin:0;padding:0}
-    .item{
-      padding:14px 12px;border-radius:12px;position:relative;
-      border:1px solid rgba(255,255,255,.06);
-      transition:transform .08s ease, box-shadow .08s ease, border-color .2s ease;
-    }
+    .item{padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);transition:transform .08s ease, box-shadow .08s ease, border-color .2s ease}
     .item + .item{margin-top:10px}
     .item:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(0,0,0,.28);border-color:rgba(109,211,255,.25)}
     .item b{font-weight:600}
+    .kicker{color:var(--muted);font-size:.93rem;margin:6px 0 0}
     .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.92rem;margin-top:6px}
     .linkslot{margin-top:8px}
-    .linkslot a{
-      display:inline-flex;align-items:center;gap:6px;
-      padding:6px 10px;border-radius:10px;background:rgba(109,211,255,.08);
-      border:1px solid var(--ring)
+    .linkslot a{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:10px;background:rgba(109,211,255,.08);border:1px solid var(--ring)}
+
+    /* Name highlight */
+    .highlight-name{
+      font-weight:700;
+      color:#6dd3ff;
+      background:rgba(109,211,255,0.12);
+      padding:0 3px;border-radius:4px
     }
-    .kicker{color:var(--muted);font-size:.93rem;margin:6px 0 0}
-    footer{margin:26px 0 8px;color:var(--muted);font-size:.9rem}
   </style>
 </head>
 <body>
@@ -89,104 +70,63 @@
 
   <main class="wrap">
     <div class="intro">
-      <p>
-        I study uncertainty quantification and decision-making under distribution shift—methods that are principled yet practical.
-      </p>
+      <p>I study uncertainty quantification and decision-making under distribution shift—methods that are principled yet practical.</p>
     </div>
 
     <div class="grid">
-      <!-- Column 1: Current Research -->
+      <!-- LEFT COLUMN: CURRENT RESEARCH -->
       <section class="block">
         <h2>Current Research</h2>
         <ul class="clean">
           <li class="item">
             <b>Nonparametric Confidence Intervals using the Cheap Bootstrap</b>
-            <div class="meta">Ongoing work with Prof. Henry Lam</div>
-            <p class="kicker">Lightweight bootstrap that yields asymptotically exact CIs for bagged predictors with a small, fixed number of resamples as bag size grows; applicable to Random Forests and bagged SAA.</p>
-            <div class="linkslot">Link: <a href="#" title="Add link">Add link</a></div>
+            <p class="kicker">Lightweight bootstrap yielding asymptotically exact CIs for bagged predictors with a small, fixed number of resamples as bag size grows; applicable to Random Forests and bagged SAA.</p>
           </li>
 
           <li class="item">
             <b>Superiority of Naive Optimization via Stochastic Dominance</b>
-            <div class="meta">Ongoing work with Prof. Henry Lam</div>
-            <p class="kicker">Shows when ERM can outperform DRO/regularization in minimizing worst-case regret under joint data and distributional uncertainty via generalized symmetry arguments.</p>
-            <div class="linkslot">Link: <a href="#" title="Add link">Add link</a></div>
+            <p class="kicker">When ERM can outperform DRO/regularization in minimizing worst-case regret under joint data and distributional uncertainty.</p>
           </li>
 
           <li class="item">
             <b>Estimation of Rare-Event Probabilities using Extreme Value Theory</b>
-            <div class="meta">Ongoing work with Prof. Henry Lam</div>
-            <p class="kicker">Estimates tail probabilities using GPD as a model-agnostic alternative to importance sampling for rare-event simulation.</p>
-            <div class="linkslot">Link: <a href="#" title="Add link">Add link</a></div>
+            <p class="kicker">Tail probability estimation via GPD as a model-agnostic alternative to importance sampling in rare-event simulation.</p>
           </li>
 
           <li class="item">
             <b>Fantasy-Sports User Behavior Modeling</b>
-            <div class="meta">Ongoing collaboration with Dream Sports</div>
-            <p class="kicker">Identifies platform actions (promotions/incentives) that causally impact user engagement at production scale.</p>
-            <div class="linkslot">Link: <a href="#" title="Add link">Add link</a></div>
+            <p class="kicker">Causal impact of promotions/incentives on user engagement at production scale.</p>
           </li>
 
           <li class="item">
             <b>Multivariate Flight-Data Modeling</b>
             <div class="meta">NASA Langley Research Centre</div>
-            <p class="kicker">Tractable polynomial-feature modeling, internal Python package + MATLAB implementation, estimation with non-normalized statistical models.</p>
-            <div class="linkslot">Link: <a href="#" title="Add link">Add link</a></div>
+            <p class="kicker">Tractable polynomial-feature modeling; internal Python package and MATLAB implementation; estimation with non-normalized statistical models.</p>
           </li>
         </ul>
       </section>
 
-      <!-- Column 2: Publications & Patents -->
+      <!-- RIGHT COLUMN: PUBLICATIONS & PATENTS + INVITED TALKS -->
       <section class="block">
         <h2>Publications &amp; Patents</h2>
         <ul class="clean">
           <li class="item">
-            <b>Roy Chowdhury, A., Lam, H.</b>
-            <div class="kicker">
-              Efficient Uncertainty Quantification of Bagging via the Cheap Bootstrap. Accepted at <i>Proceedings of the 2025 Winter Simulation Conference</i>.
-            </div>
-            <div class="linkslot">Link: <a href="#" title="Add link to paper">Add link</a></div>
+            <b><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</b>
+            <div class="kicker">Efficient Uncertainty Quantification of Bagging via the Cheap Bootstrap. <i>Proceedings of the 2025 Winter Simulation Conference</i>.</div>
+            <div class="linkslot">Link: <a href="#" title="Add paper link">Add link</a></div>
           </li>
 
           <li class="item">
-            <b>Saha, P., Dasgupta, J., Tewari, A., Ramesh, A. K. N., Roy Chowdhury, A., S, Anupam., Kedia, G.</b>
-            <div class="kicker">
-              Methods and systems for developing decision tree machine learning models. <b>US 2024/0386287 A1</b>.
-            </div>
-            <div class="linkslot">Link: <a href="#" title="Add link to patent">Add link</a></div>
-          </li>
-        </ul>
-      </section>
-
-      <!-- Full-width: Technical Reports & Invited Talks -->
-      <section class="block stack-vert">
-        <h2>Technical Reports &amp; Invited Talks</h2>
-
-        <p class="sub">Technical Reports / Working Notes</p>
-        <ul class="clean">
-          <li class="item">
-            <b>Cheap Bootstrap for Bagging</b>
-            <div class="kicker">Draft covering asymptotically exact CIs for bagged predictors; applications to Random Forests and bagged SAA.</div>
-            <div class="linkslot">Link: <a href="#" title="Add link to draft">Add link</a></div>
-          </li>
-          <li class="item">
-            <b>ERM vs DRO under Joint Uncertainty</b>
-            <div class="kicker">Regret-optimality conditions and symmetry arguments supporting naive optimization.</div>
-            <div class="linkslot">Link: <a href="#" title="Add link to draft">Add link</a></div>
-          </li>
-          <li class="item">
-            <b>EVT-based Rare-Event Estimation</b>
-            <div class="kicker">GPD modeling and alternatives to importance sampling for tail probability estimation.</div>
-            <div class="linkslot">Link: <a href="#" title="Add link to draft">Add link</a></div>
-          </li>
-          <li class="item">
-            <b>Large-Scale Behavioral Analytics</b>
-            <div class="kicker">Production-scale causal inference for engagement; platform actions and outcomes.</div>
-            <div class="linkslot">Link: <a href="#" title="Add link to draft">Add link</a></div>
+            <b>
+              Saha, P., Dasgupta, J., Tewari, A., Ramesh, A. K. N.,
+              <span class="highlight-name">Roy Chowdhury, A.</span>, S, Anupam., Kedia, G.
+            </b>
+            <div class="kicker">Methods and systems for developing decision tree machine learning models. <b>US 2024/0386287 A1</b>.</div>
+            <div class="linkslot">Link: <a href="#" title="Add patent link">Add link</a></div>
           </li>
         </ul>
 
-        <p class="sub" style="margin-top:14px;">Invited Talks</p>
+        <h2 style="margin-top:18px;">Invited Talks</h2>
         <ul class="clean">
           <li class="item">
             <b>NASA Langley Research Centre (Nov 2024), Uncertainty Quantification Seminar</b>
@@ -195,7 +135,7 @@
           </li>
           <li class="item">
             <b>INFORMS Annual Meeting (Oct 2024), Recent Advances in Data-Driven Optimization</b>
-            <div class="kicker">“Robustness Vs Statistical Efficiency: Superiority of Naive Optimization.”</div>
+            <div class="kicker">“Robustness vs Statistical Efficiency: Superiority of Naive Optimization.”</div>
             <div class="linkslot">Link: <a href="#" title="Add slides/recording">Add link</a></div>
           </li>
           <li class="item">
@@ -207,11 +147,34 @@
       </section>
     </div>
 
-    <footer>
-      Details adapted from my CV. (Source: your uploaded PDF) :contentReference[oaicite:0]{index=0}
-    </footer>
+    <!-- FULL-WIDTH: TECHNICAL REPORTS -->
+    <section class="block" style="margin-top:22px;">
+      <h2>Technical Reports / Working Notes</h2>
+      <ul class="clean">
+        <li class="item">
+          <b>Cheap Bootstrap for Bagging</b>
+          <div class="kicker">Asymptotically exact CIs for bagged predictors; Random Forests and bagged SAA applications.</div>
+          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+        </li>
+        <li class="item">
+          <b>ERM vs DRO under Joint Uncertainty</b>
+          <div class="kicker">Regret-optimality conditions and symmetry arguments supporting naive optimization.</div>
+          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+        </li>
+        <li class="item">
+          <b>EVT-based Rare-Event Estimation</b>
+          <div class="kicker">GPD modeling as an alternative to importance sampling for tail probabilities.</div>
+          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+        </li>
+        <li class="item">
+          <b>Large-Scale Behavioral Analytics</b>
+          <div class="kicker">Production-scale causal inference for engagement; promotions and incentives.</div>
+          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+        </li>
+      </ul>
+    </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact" class="wrap" style="padding:0 0 36px;">
       <h2>Contact</h2>
       <p><span>Email: </span><a href="mailto:arindam.roychowdhury@columbia.edu">arindam.roychowdhury@columbia.edu</a></p>
