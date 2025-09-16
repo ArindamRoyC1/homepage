@@ -1,123 +1,148 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-     <!-- Main CSS File -->
-  <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Work Experience — Arindam Roy Chowdhury</title>
 
+  <style>
+    :root{
+      --bg:#1a1d2f;   /* slightly lighter background */
+      --card:#232844; /* slightly lighter card color */
+      --text:#e8ecf3; --muted:#9aa3b2;
+      --link:#3b82f6;
+      --radius:16px; --shadow:0 8px 24px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(to bottom, rgba(26,29,47,.9), rgba(26,29,47,.6));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
+    header .top{display:flex;align-items:center;gap:18px;justify-content:space-between}
+    h1{margin:0;font-weight:800;letter-spacing:.3px}
+    h1 i{font-style:normal;background:linear-gradient(90deg,#fff,#bfe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    nav{display:flex;gap:16px;flex-wrap:wrap}
+    nav a{padding:8px 12px;border-radius:10px;color:var(--text);opacity:.95}
+    nav a:hover{background:rgba(255,255,255,.06);opacity:1}
+
+    main{padding:28px 0}
+    section.block{background:var(--card);border-radius:var(--radius);
+      padding:18px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);margin-bottom:22px}
+    h2{margin:4px 0 12px;font-size:1.35rem}
+    ul.clean{list-style:none;margin:0;padding:0}
+    .item{padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+    .item + .item{margin-top:10px}
+    .title{font-weight:700}
+    .desc{color:var(--muted);font-size:.95rem;margin:6px 0 6px}
+  </style>
 </head>
 
 <body>
-    <header>
+  <header>
+    <div class="wrap top">
       <h1><i>Arindam Roy Chowdhury</i></h1>
-        <nav>
-            <a href="index.html">About</a>
-            <a href="research.html">Research</a>
-            <a href="workex.html">Work Experience</a>
-            <a href="assets/Arindam_CV.pdf" target="_blank">CV</a>
-        </nav>
-      </header>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="workex.html" aria-current="page">Work Experience</a>
+        <a href="assets/Arindam_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
 
-      <section class="research-section">
-        <h2>Work Experience</h2>
-<h3>Industry Experience</h3>
-<ul>
+  <main class="wrap">
 
-  <li>
-    <p> <b>
-      NASA Langley Research Center — Research Intern (Jul–Sep 2024)
-    </b> <br>
-   Built a tractable optimization framework for multivariate flight data using polynomial features; delivered an internal Python package (with a MATLAB follow-on) and explored estimation with non-normalized statistical models.
-    </p>
-  </li>
-  <li>
-    <p>
-      <b>
-        Capital One Financial Services — Associate (Jul 2021–Jul 2022)
-      </b>
-      <br>
-      Developed risk-management models to predict probability of default for real-estate and low-default commercial portfolios.
-    </p>
-  </li>
-  <li>
-    <p>
-      <b>
-        Capital One — Data Science Intern (May–Jul 2020)
-      </b>
-      <br>
-      Designed a procedure for decision trees with missing data and integrated it into a Python decision-tree tool (now patented).
-    </p>
-  </li>
-  <li>
-    <p>
-      <b>
-        Centre for Science of Student Learning — Research Intern (May–Jul 2019)
-      </b>
-      <br>
-      Studied causal impacts of teaching techniques (mediation/moderation analysis).
-    </p>
-  </li>
-</ul>
+    <!-- Industry Experience -->
+    <section class="block">
+      <h2>Industry Experience</h2>
+      <ul class="clean">
 
+        <li class="item">
+          <div class="title">NASA Langley Research Center — Research Intern (Jul–Sep 2024)</div>
+          <p class="desc">
+            Built a tractable optimization framework for multivariate flight-data modeling using polynomial features; delivered an internal Python package (with a MATLAB follow-on) and explored estimation with non-normalized statistical models.
+          </p>
+        </li>
 
-<h3>Teaching Experience</h3>
+        <li class="item">
+          <div class="title">Capital One Financial Services — Associate (Jul 2021–Jul 2022)</div>
+          <p class="desc">
+            Developed risk-management models to predict probability of default for real-estate and low-default commercial portfolios.
+          </p>
+        </li>
 
-<ul>
-  <li>
-    <p>
-      <b>
-        Teaching Assistant, IEOR E4707: Continuous-Time Models — Columbia University (Spring 2024)
-      </b>
-      <br>
-      Instructor: Prof. Xunyu Zhou.
-    </p>
-  </li>
+        <li class="item">
+          <div class="title">Capital One — Data Science Intern (May–Jul 2020)</div>
+          <p class="desc">
+            Developed a complete procedure for training decision-tree classifiers when datasets contain missing values—detecting the type of missingness and applying suitable treatments automatically. Implemented the end-to-end workflow as a user-friendly Python tool used internally; received a job offer as a Data Science Associate at the end of the internship.  
+            <a href="assets/patent.pdf" target="_blank" rel="noopener">patent</a>
+          </p>
+        </li>
 
-  <li>
-    <p>
-      <b>
-        Teaching Assistant, IEOR E4106: Stochastic Models — Columbia University (Fall 2023)
-      </b>
-      <br>
-      Instructor: Prof. Ton Dieker.
-    </p>
-  </li>
-  <li>
-    <p>
-      <b>
-        Teaching Assistant, IEOR E4150: Introduction to Statistics & Probability — Columbia University (Spring 2023)
- 
-      </b><br>
-      Instructor: Prof. Ton Dieker.
-    </p>
-  </li>
-</ul>
+        <li class="item">
+          <div class="title">Centre for Science of Student Learning — Research Intern (May–Jul 2019)</div>
+          <p class="desc">
+            Research on student learning using <em>Classical Test Theory</em> and <em>Psychometrics</em>. Contributed to an effect-size project (d-value, simulations, R tooling, Andhra Pradesh outcomes) and a teaching-mentality project (factor analysis of teacher questionnaires).
+          </p>
+        </li>
 
+      </ul>
+    </section>
 
- <h3>Reviewing & Editorial Service</h3>
- <ul>
-  <Li>
-    <b>
-      Reviewed for Journa:
-    </b> <br>
-    Operations Research Letters (2024).
-  </Li>
+    <!-- Teaching Experience -->
+    <section class="block">
+      <h2>Teaching Experience</h2>
+      <ul class="clean">
 
-  <Li>
-    <b>
-      Conference Editing/Support:
-    </b> <br>
-    Contributed to editing papers for the Winter Simulation Conference (WSC) 2023.
+        <li class="item">
+          <div class="title">Teaching Assistant, IEOR E4707: Continuous-Time Models — Columbia University (Spring 2024)</div>
+          <p class="desc">Instructor: Prof. Xunyu Zhou.</p>
+        </li>
 
-  </Li>
- </ul>
+        <li class="item">
+          <div class="title">Teaching Assistant, IEOR E4106: Stochastic Models — Columbia University (Fall 2023)</div>
+          <p class="desc">Instructor: Prof. Ton Dieker.</p>
+        </li>
 
-  </section>
-  <section id="contact">
-    <h3>Contact</h3>
-  <p><span>Email: </span><a href="mailto:arindam.roychowdhury@columbia.edu">arindam.roychowdhury@columbia.edu</a></p>
-  <p><span>Phone:</span>
-    <a href="tel:+16316828679">+1 6316 828 679</a></p>  
-  </section>
+        <li class="item">
+          <div class="title">Teaching Assistant, IEOR E4150: Introduction to Statistics &amp; Probability — Columbia University (Spring 2023)</div>
+          <p class="desc">Instructor: Prof. Ton Dieker.</p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Reviewing & Editorial Service -->
+    <section class="block">
+      <h2>Reviewing &amp; Editorial Service</h2>
+      <ul class="clean">
+
+        <li class="item">
+          <div class="title">Reviewed for Journal</div>
+          <p class="desc">Operations Research Letters (2024).</p>
+        </li>
+
+        <li class="item">
+          <div class="title">Conference Editing/Support</div>
+          <p class="desc">Contributed to editing papers for the Winter Simulation Conference (WSC) 2023.</p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="wrap" style="padding:0 0 36px;">
+      <h2>Contact</h2>
+      <p><span>Email: </span><a href="mailto:arindam.roychowdhury@columbia.edu">arindam.roychowdhury@columbia.edu</a></p>
+      <p><span>Phone: </span><a href="tel:+16316828679">+1 631 682 8679</a></p>
+    </section>
+  </main>
 </body>
+</html>

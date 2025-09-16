@@ -7,52 +7,60 @@
 
   <style>
     :root{
-      --bg:#0f1220; --card:#161a2b; --muted:#9aa3b2; --text:#e8ecf3; --accent:#6dd3ff;
-      --ring: rgba(109, 211, 255, .25); --shadow: 0 8px 24px rgba(0,0,0,.25); --radius: 16px;
+      /* Lighter dark theme to match other pages */
+      --bg:#1a1d2f;         /* was #0f1220 */
+      --card:#232844;       /* was #161a2b */
+      --text:#e8ecf3;
+      --muted:#9aa3b2;
+      --link:#3b82f6;
+      --radius:16px;
+      --shadow:0 8px 24px rgba(0,0,0,.25);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none}
+    html,body{
+      margin:0;padding:0;background:var(--bg);color:var(--text);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif
+    }
+    a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
+
     header{
       position:sticky;top:0;z-index:10;
       backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(to bottom, rgba(15,18,32,.85), rgba(15,18,32,.55));
+      background:linear-gradient(to bottom, rgba(26,29,47,.9), rgba(26,29,47,.6));
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
     header .top{display:flex;align-items:center;gap:18px;justify-content:space-between}
-    h1{margin:0;font-weight:700;letter-spacing:.3px}
-    h1 i{font-style:normal;background:linear-gradient(90deg,#fff, #bfe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    h1{margin:0;font-weight:800;letter-spacing:.3px}
+    h1 i{font-style:normal;background:linear-gradient(90deg,#fff,#bfe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
     nav{display:flex;gap:16px;flex-wrap:wrap}
-    nav a{padding:8px 12px;border-radius:10px;color:var(--text);opacity:.9}
+    nav a{padding:8px 12px;border-radius:10px;color:var(--text);opacity:.95}
     nav a:hover{background:rgba(255,255,255,.06);opacity:1}
 
     main{padding:28px 0}
-    .intro{margin:10px 0 26px;background:var(--card);border-radius:var(--radius);padding:18px 20px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
-    .grid{display:grid;gap:22px;grid-template-columns:1fr}
-    @media (min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
-
-    section.block{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    section.block{
+      background:var(--card);border-radius:var(--radius);
+      padding:18px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);margin-bottom:22px
+    }
     h2{margin:4px 0 12px;font-size:1.35rem}
-    .sub{color:var(--muted);font-size:.95rem;margin:0 0 10px}
     ul.clean{list-style:none;margin:0;padding:0}
-    .item{padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);transition:transform .08s ease, box-shadow .08s ease, border-color .2s ease}
+    .item{padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
     .item + .item{margin-top:10px}
-    .item:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(0,0,0,.28);border-color:rgba(109,211,255,.25)}
-    .item b{font-weight:600}
-    .kicker{color:var(--muted);font-size:.93rem;margin:6px 0 0}
-    .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.92rem;margin-top:6px}
-    .linkslot{margin-top:8px}
-    .linkslot a{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:10px;background:rgba(109,211,255,.08);border:1px solid var(--ring)}
+    .title{font-weight:700}
+    .authors{margin-top:4px;color:var(--text)}
+    .desc{color:var(--muted);font-size:.95rem;margin:6px 0 6px}
+    .links{margin-top:4px}
+    .links a{margin-right:12px}
 
-    /* Name highlight */
     .highlight-name{
       font-weight:700;
-      color:#6dd3ff;
-      background:rgba(109,211,255,0.12);
-      padding:0 3px;border-radius:4px
+      background:rgba(59,130,246,.12);
+      padding:0 3px; border-radius:4px;
     }
+
+    .equal-note { font-size: 0.85em; color: var(--muted); }
+    .early li { margin-bottom: 14px; }
   </style>
 </head>
 <body>
@@ -69,112 +77,146 @@
   </header>
 
   <main class="wrap">
-    <div class="intro">
-      <p>I study uncertainty quantification and decision-making under distribution shift—methods that are principled yet practical.</p>
-    </div>
-
-    <div class="grid">
-      <!-- LEFT COLUMN: CURRENT RESEARCH -->
-      <section class="block">
-        <h2>Current Research</h2>
-        <ul class="clean">
-          <li class="item">
-            <b>Nonparametric Confidence Intervals using the Cheap Bootstrap</b>
-            <p class="kicker">Lightweight bootstrap yielding asymptotically exact CIs for bagged predictors with a small, fixed number of resamples as bag size grows; applicable to Random Forests and bagged SAA.</p>
-          </li>
-
-          <li class="item">
-            <b>Superiority of Naive Optimization via Stochastic Dominance</b>
-            <p class="kicker">When ERM can outperform DRO/regularization in minimizing worst-case regret under joint data and distributional uncertainty.</p>
-          </li>
-
-          <li class="item">
-            <b>Estimation of Rare-Event Probabilities using Extreme Value Theory</b>
-            <p class="kicker">Tail probability estimation via GPD as a model-agnostic alternative to importance sampling in rare-event simulation.</p>
-          </li>
-
-          <li class="item">
-            <b>Fantasy-Sports User Behavior Modeling</b>
-            <p class="kicker">Causal impact of promotions/incentives on user engagement at production scale.</p>
-          </li>
-
-          <li class="item">
-            <b>Multivariate Flight-Data Modeling</b>
-            <div class="meta">NASA Langley Research Centre</div>
-            <p class="kicker">Tractable polynomial-feature modeling; internal Python package and MATLAB implementation; estimation with non-normalized statistical models.</p>
-          </li>
-        </ul>
-      </section>
-
-      <!-- RIGHT COLUMN: PUBLICATIONS & PATENTS + INVITED TALKS -->
-      <section class="block">
-        <h2>Publications &amp; Patents</h2>
-        <ul class="clean">
-          <li class="item">
-            <b><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</b>
-            <div class="kicker">Efficient Uncertainty Quantification of Bagging via the Cheap Bootstrap. <i>Proceedings of the 2025 Winter Simulation Conference</i>.</div>
-            <div class="linkslot">Link: <a href="#" title="Add paper link">Add link</a></div>
-          </li>
-
-          <li class="item">
-            <b>
-              Saha, P., Dasgupta, J., Tewari, A., Ramesh, A. K. N.,
-              <span class="highlight-name">Roy Chowdhury, A.</span>, S, Anupam., Kedia, G.
-            </b>
-            <div class="kicker">Methods and systems for developing decision tree machine learning models. <b>US 2024/0386287 A1</b>.</div>
-            <div class="linkslot">Link: <a href="#" title="Add patent link">Add link</a></div>
-          </li>
-        </ul>
-
-        <h2 style="margin-top:18px;">Invited Talks</h2>
-        <ul class="clean">
-          <li class="item">
-            <b>NASA Langley Research Centre (Nov 2024), Uncertainty Quantification Seminar</b>
-            <div class="kicker">“Modelling Multivariate Data using Exponential Polynomials”; “Stochastic Optimization: Superiority of Naive Approaches.”</div>
-            <div class="linkslot">Link: <a href="#" title="Add slides/recording">Add link</a></div>
-          </li>
-          <li class="item">
-            <b>INFORMS Annual Meeting (Oct 2024), Recent Advances in Data-Driven Optimization</b>
-            <div class="kicker">“Robustness vs Statistical Efficiency: Superiority of Naive Optimization.”</div>
-            <div class="linkslot">Link: <a href="#" title="Add slides/recording">Add link</a></div>
-          </li>
-          <li class="item">
-            <b>New England Statistics Symposium (May 2024), Recent Advances in Data-Driven Decision-Making</b>
-            <div class="kicker">“Regret Optimality of Empirical Risk Minimization.”</div>
-            <div class="linkslot">Link: <a href="#" title="Add slides/recording">Add link</a></div>
-          </li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- FULL-WIDTH: TECHNICAL REPORTS -->
-    <section class="block" style="margin-top:22px;">
-      <h2>Technical Reports / Working Notes</h2>
+    <!-- Research & Publications -->
+    <section class="block">
+      <h2>Research &amp; Publications</h2>
       <ul class="clean">
+
+        <!-- Cheap Bootstrap -->
         <li class="item">
-          <b>Cheap Bootstrap for Bagging</b>
-          <div class="kicker">Asymptotically exact CIs for bagged predictors; Random Forests and bagged SAA applications.</div>
-          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+          <div class="title">Efficient Uncertainty Quantification of Bagging via the Cheap Bootstrap</div>
+          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</div>
+          <p class="desc">
+            Developed a lightweight bootstrap framework that provides asymptotically exact confidence intervals for bagged predictors using a small, fixed number of resamples as bag size grows. Applicable to Random Forests and bagged estimators in stochastic optimization.
+          </p>
+          <div class="links">
+            To appear in the <i>Proceedings of the Winter Simulation Conference (WSC) 2025</i>, December.
+          </div>
         </li>
+
+        <!-- Naive Optimization -->
         <li class="item">
-          <b>ERM vs DRO under Joint Uncertainty</b>
-          <div class="kicker">Regret-optimality conditions and symmetry arguments supporting naive optimization.</div>
-          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+          <div class="title">Superiority of Naïve Optimization via Stochastic Dominance</div>
+          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</div>
+          <p class="desc">
+            Theoretically established that naive methods such as Empirical Risk Minimization (ERM) can outperform Distributionally Robust Optimization (DRO) and regularization in minimizing worst-case regret under joint data and distributional uncertainty, leveraging generalized symmetry arguments. Demonstrated effectiveness under standard distribution-shift regimes.
+          </p>
+          <div class="links">
+            <a href="assets/Joint_Uncertainty_Slides.pdf" target="_blank" rel="noopener">slides</a>
+          </div>
         </li>
+
+        <!-- Fantasy Sports -->
         <li class="item">
-          <b>EVT-based Rare-Event Estimation</b>
-          <div class="kicker">GPD modeling as an alternative to importance sampling for tail probabilities.</div>
-          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+          <div class="title">Fantasy Sports User Behavior Modeling</div>
+          <div class="authors">Ongoing collaboration with Dream Sports</div>
+          <p class="desc">
+            Identifies platform actions, such as promotions and incentives, that causally impact user engagement in fantasy sports at production scale.
+          </p>
         </li>
+
+        <!-- Rare-event EVT -->
         <li class="item">
-          <b>Large-Scale Behavioral Analytics</b>
-          <div class="kicker">Production-scale causal inference for engagement; promotions and incentives.</div>
-          <div class="linkslot">Link: <a href="#" title="Add draft link">Add link</a></div>
+          <div class="title">Estimation of Rare-Event Probabilities Using Extreme Value Theory</div>
+          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</div>
+          <p class="desc">
+            Estimates rare-event probabilities by modeling the tail behavior using the Generalized Pareto Distribution (GPD). Investigates GPD-based methods as a model-agnostic alternative to importance sampling for rare-event simulation.
+          </p>
+        </li>
+
+        <!-- Bayesian Trees -->
+        <li class="item">
+          <div class="title">Bayesian Nonparametric Generalization of Tree-Based ML Approaches</div>
+          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Bhattacharya, S.</div>
+          <p class="desc">
+            Proposed a Bayesian nonparametric mixture model of decision trees with a random number of components, using a Dirichlet Process prior to flexibly capture complex decision boundaries.
+            <br><em>M.Stat dissertation work</em>
+          </p>
+          <div class="links">
+            <a href="assets/Mstat_dissertation_report.pdf" target="_blank" rel="noopener">report</a>
+            <a href="assets/M_stat_dissertation_slides.pdf" target="_blank" rel="noopener">slides</a>
+          </div>
+        </li>
+
+        <!-- Accelerography -->
+        <li class="item">
+          <div class="title">Accelerography: Feasibility of Gesture Typing using Accelerometer</div>
+          <div class="authors">
+            <span class="highlight-name">Roy Chowdhury, A.*</span>, 
+            Dalal, A.*, 
+            Sen, S.*
+          </div>
+          <p class="desc">
+            Designed intuitive motion gestures for the English alphabet, enabling text input by physically moving a phone. Developed and implemented an R-based pipeline to classify these gestures using accelerometer data.
+            <br><span class="equal-note">* Equal contribution</span>
+          </p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2003.14310" target="_blank" rel="noopener">arxiv</a>
+          </div>
         </li>
       </ul>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Invited Talks -->
+    <section class="block">
+      <h2>Invited Talks</h2>
+      <ul class="clean">
+        <li class="item">
+          <div class="title"><b>NASA Langley Research Centre</b></div>
+          <p class="desc"><em>Session: Uncertainty Quantification Seminar (Nov 2024)</em></p>
+          <ul>
+            <li><b>Title 1:</b> Modelling Multivariate Data using Exponential Polynomials</li>
+            <li><b>Title 2:</b> Stochastic Optimization: Superiority of Naïve Approaches</li>
+          </ul>
+        </li>
+        <li class="item">
+          <div class="title"><b>INFORMS Annual Meeting</b></div>
+          <p class="desc"><em>Session: Recent Advances in Data-Driven Optimization (Oct 2024)</em></p>
+          <ul>
+            <li><b>Title:</b> Robustness vs Statistical Efficiency: Superiority of Naïve Optimization</li>
+          </ul>
+        </li>
+        <li class="item">
+          <div class="title"><b>The 37th New England Statistics Symposium</b></div>
+          <p class="desc"><em>Session: Recent Advances in Data-Driven Decision-Making (May 2024)</em></p>
+          <ul>
+            <li><b>Title:</b> Regret Optimality of Empirical Risk Minimization</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Early Works -->
+    <section class="block">
+      <h2>Early Research &amp; Project Reports</h2>
+      <ul class="early">
+        <li>
+          <b>Causal Inference using Directed Acyclic Graphical (DAG) Models</b> (Nov–Dec 2019)  
+          <div class="authors">
+            Subhrajyoty Roy, Abhinandan Dalal, <span class="highlight-name">Arindam Roy Chowdhury</span>
+          </div>
+          <p class="desc">
+            Explored the need of studying causal inference as a separate topic, and did a basic review of causal inference
+            using directed acyclic graphs. Performed analysis of causal inference on different datasets, to estimate the
+            underlying causal model. Noted some significant implications for Tea auction mechanism in India.  
+            <a href="assets/Causal_DAG.pdf" target="_blank" rel="noopener">report</a>
+          </p>
+        </li>
+
+        <li>
+          <b>Modelling Summit Success Rate of Mt. Rainier</b> (Nov–Dec 2019)  
+          <div class="authors">
+            Subhrajyoty Roy, Abhinandan Dalal, <span class="highlight-name">Arindam Roy Chowdhury</span>, Abhishek Bakshi
+          </div>
+          <p class="desc">
+            Modeled team size as a Poisson mixture and analyzed summit success rates conditioned on team size, achieving strong predictive performance.  
+            <a href="assets/Mount_Rainer.pdf" target="_blank" rel="noopener">slides</a>
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="wrap" style="padding:0 0 36px;">
       <h2>Contact</h2>
       <p><span>Email: </span><a href="mailto:arindam.roychowdhury@columbia.edu">arindam.roychowdhury@columbia.edu</a></p>
