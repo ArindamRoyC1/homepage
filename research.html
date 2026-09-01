@@ -16,112 +16,118 @@
 
   <style>
     :root{
-      /* Lighter dark theme to match other pages */
-      --bg:#1a1d2f;         /* was #0f1220 */
-      --card:#20253F;       /* was #161a2b */
-      --text:#e8ecf3;
-      --muted:#9aa3b2;
-      --link:#3b82f6;
-      --accent:#60a5fa;
-      --radius:16px;
-      --shadow:0 8px 24px rgba(0,0,0,.25);
+      --blue:#527bbd;
+      --link:#224b8d;
+      --rule:#a7a7a7;
+      --menu:#f6f6f6;
+      --text:#111;
+      --muted:#4a4a4a;
     }
+
     *{box-sizing:border-box}
+
     html,body{
-      margin:0;padding:0;background:var(--bg);color:var(--text);
-      font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif
+      margin:0;
+      padding:0;
+      background:#fff;
+      color:var(--text);
+      font:16px/1.3 Georgia,"Times New Roman",serif;
     }
+
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    header{
-      position:sticky;top:0;z-index:10;
-      backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(to bottom, rgba(26,29,47,.9), rgba(26,29,47,.6));
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
-    header .top{display:flex;align-items:center;gap:18px;justify-content:space-between}
-    h1{margin:0;font-weight:800;letter-spacing:.3px}
-    h1 i{font-style:normal;background:linear-gradient(90deg,#fff,#bfe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-    nav{display:flex;gap:16px;flex-wrap:wrap}
-    nav a{padding:8px 12px;border-radius:10px;color:var(--text);opacity:.95}
-    nav a:hover{background:rgba(255,255,255,.06);opacity:1}
-
-    main{padding:28px 0}
-    section.block{
-      background:var(--card);border-radius:var(--radius);
-      padding:24px 26px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);margin-bottom:22px
-    }
-    h2{margin:0 0 18px;font-size:1.35rem}
-    ul.clean{list-style:none;margin:0;padding:0}
-    ul.early{list-style:none;margin:0;padding:0}
-
-    .item,
-    .early > li{
-      position:relative;
-      padding:2px 0 22px 22px;
-      border-left:2px solid rgba(96,165,250,.35);
+    .layout{
+      display:grid;
+      grid-template-columns:170px minmax(0,1120px);
+      min-height:100vh;
     }
 
-    .item::before,
-    .early > li::before{
-      content:"";
-      position:absolute;
-      top:7px;
-      left:-6px;
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 0 4px var(--card);
+    .sidebar{
+      min-height:100vh;
+      padding:27px 14px;
+      background:var(--menu);
+      border-right:1px solid #ddd;
     }
 
-    .item:last-child,
-    .early > li:last-child{padding-bottom:2px}
+    .menu-title{
+      display:block;
+      padding-bottom:3px;
+      border-bottom:1px solid #888;
+      font-weight:700;
+    }
+
+    nav{display:flex;flex-direction:column;align-items:flex-start}
+    nav a{margin-top:5px;white-space:nowrap}
+    nav a[aria-current="page"]{color:#111;text-decoration:underline}
+
+    .content{padding:14px 18px 28px;min-width:0}
+    section{margin:0 0 28px}
+
+    h2{
+      margin:0 0 16px;
+      padding-bottom:2px;
+      color:var(--blue);
+      border-bottom:1px solid var(--rule);
+      font-size:1.28rem;
+      line-height:1.2;
+    }
+
+    section:first-child h2{
+      font-size:1.55rem;
+      border-bottom:3px double var(--rule);
+    }
+
+    ul.clean,ul.early{
+      margin:0;
+      padding-left:38px;
+      list-style-type:square;
+    }
+
+    .item,.early > li{padding-left:1px;margin:0 0 25px}
+    .item:last-child,.early > li:last-child{margin-bottom:0}
 
     .title{font-weight:700}
-    .authors{margin-top:4px;color:var(--text)}
-    .desc{color:var(--muted);font-size:.95rem;margin:6px 0 6px}
-    .links{margin-top:4px}
-    .links a{margin-right:12px}
-
-    .award{
-      margin-top:5px;
-      color:var(--muted);
-      font-size:.9rem;
+    .authors{
+      margin-top:4px;
+      color:#444;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.92rem;
+      font-weight:400;
+      line-height:1.35;
     }
-
-    .highlight-name{
-      font-weight:700;
-      background:rgba(59,130,246,.12);
-      padding:0 3px; border-radius:4px;
-    }
-
-    .equal-note { font-size: 0.85em; color: var(--muted); }
+    .desc{margin:4px 0;color:var(--muted)}
+    .links{margin-top:2px}
+    .links a{margin-right:8px}
+    .award{margin-top:2px;font-style:italic;color:var(--muted)}
+    .highlight-name{color:#222;font-weight:600}
+    .equal-note{font-size:.9em;color:var(--muted)}
+    .item ul{margin-top:4px;padding-left:24px}
 
     @media (max-width:720px){
-      header .top{align-items:flex-start;flex-direction:column}
-      nav{gap:6px}
-      nav a{padding:7px 9px}
-      section.block{padding:22px 20px}
+      .layout{display:block}
+      .sidebar{min-height:auto;padding:10px 16px;border-right:0;border-bottom:1px solid #ddd}
+      .menu-title{display:none}
+      nav{flex-direction:row;flex-wrap:wrap;gap:7px 18px}
+      nav a{margin:0}
+      .content{padding:16px}
+      ul.clean,ul.early{padding-left:24px}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap top">
-      <h1><i>Arindam Roy Chowdhury</i></h1>
-      <nav>
+  <div class="layout">
+    <aside class="sidebar">
+      <span class="menu-title">Menu</span>
+      <nav aria-label="Primary navigation">
         <a href="index.html">About</a>
         <a href="research.html" aria-current="page">Research</a>
-        <a href="workex.html">Work Experience</a>
+        <a href="workex.html">Experience</a>
         <a href="assets/Arindam_CV.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
-    </div>
-  </header>
+    </aside>
 
-  <main class="wrap">
+    <main class="content">
     <!-- Research & Publications -->
     <section class="block">
       <h2>Research &amp; Publications</h2>
@@ -275,6 +281,7 @@
     </section>
 
    
-  </main>
+    </main>
+  </div>
 </body>
 </html>
