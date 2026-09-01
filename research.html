@@ -22,6 +22,7 @@
       --text:#e8ecf3;
       --muted:#9aa3b2;
       --link:#3b82f6;
+      --accent:#60a5fa;
       --radius:16px;
       --shadow:0 8px 24px rgba(0,0,0,.25);
     }
@@ -50,17 +51,46 @@
     main{padding:28px 0}
     section.block{
       background:var(--card);border-radius:var(--radius);
-      padding:18px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);margin-bottom:22px
+      padding:24px 26px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);margin-bottom:22px
     }
-    h2{margin:4px 0 12px;font-size:1.35rem}
+    h2{margin:0 0 18px;font-size:1.35rem}
     ul.clean{list-style:none;margin:0;padding:0}
-    .item{padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
-    .item + .item{margin-top:10px}
+    ul.early{list-style:none;margin:0;padding:0}
+
+    .item,
+    .early > li{
+      position:relative;
+      padding:2px 0 22px 22px;
+      border-left:2px solid rgba(96,165,250,.35);
+    }
+
+    .item::before,
+    .early > li::before{
+      content:"";
+      position:absolute;
+      top:7px;
+      left:-6px;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 4px var(--card);
+    }
+
+    .item:last-child,
+    .early > li:last-child{padding-bottom:2px}
+
     .title{font-weight:700}
     .authors{margin-top:4px;color:var(--text)}
     .desc{color:var(--muted);font-size:.95rem;margin:6px 0 6px}
     .links{margin-top:4px}
     .links a{margin-right:12px}
+
+    .award{
+      margin-top:5px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
 
     .highlight-name{
       font-weight:700;
@@ -69,7 +99,13 @@
     }
 
     .equal-note { font-size: 0.85em; color: var(--muted); }
-    .early li { margin-bottom: 14px; }
+
+    @media (max-width:720px){
+      header .top{align-items:flex-start;flex-direction:column}
+      nav{gap:6px}
+      nav a{padding:7px 9px}
+      section.block{padding:22px 20px}
+    }
   </style>
 </head>
 <body>
@@ -95,11 +131,12 @@
         <li class="item">
           <div class="title">Efficient Uncertainty Quantification of Bagging via the Cheap Bootstrap</div>
           <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</div>
+          <div class="award">Student Paper Competition Winner, New England Statistics Symposium (NESS), 2026</div>
           <p class="desc">
             Developed a lightweight bootstrap framework that provides asymptotically exact confidence intervals for bagged predictors using a small, fixed number of resamples as bag size grows. Applicable to Random Forests and bagged estimators in stochastic optimization.
           </p>
           <div class="links">
-            To appear in the <i>Proceedings of the Winter Simulation Conference (WSC) 2025</i>, December.
+            <a href="https://ieeexplore.ieee.org/iel8/11338806/11338851/11339034.pdf" target="_blank" rel="noopener"><i>Proceedings of the 2025 Winter Simulation Conference (WSC)</i>, pp. 3442–3453, IEEE, 2025</a>.
           </div>
         </li>
 
@@ -112,6 +149,18 @@
           </p>
           <div class="links">
             <a href="assets/Joint_Uncertainty_Slides.pdf" target="_blank" rel="noopener">slides</a>
+          </div>
+        </li>
+
+        <!-- Sliced-Normal NASA -->
+        <li class="item">
+          <div class="title">Quantification and Decomposition of Uncertainty Using Sliced-Normal Distribution: With Applications to NASA Data</div>
+          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Crespo, L. G., Lam, H.</div>
+          <p class="desc">
+            Developed a scalable framework for modeling complex multivariate distributions with Sliced-Normal models. Reformulated parameter estimation as a convex positive-semidefinite optimization problem, established universal approximation on compact domains, and introduced a block-assembly method for higher-dimensional NASA loss-of-control flight data.
+          </p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2608.14878" target="_blank" rel="noopener">arXiv:2608.14878</a>
           </div>
         </li>
 
@@ -160,7 +209,7 @@
             <br><span class="equal-note">* Equal contribution</span>
           </p>
           <div class="links">
-            <a href="https://arxiv.org/abs/2003.14310" target="_blank" rel="noopener">arxiv</a>
+            <a href="https://arxiv.org/abs/2003.14310" target="_blank" rel="noopener">arXiv:2003.14310</a>
           </div>
         </li>
       </ul>

@@ -1,127 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CWKTPSGQF7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-CWKTPSGQF7"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-CWKTPSGQF7');
-</script>
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-CWKTPSGQF7");
+  </script>
 
   <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>About — Arindam Roy Chowdhury</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- Search-engine information -->
+  <title>Arindam Roy Chowdhury • Home</title>
+
+  <meta
+    name="description"
+    content="I am a PhD student in IEOR at Columbia University, advised by Prof. Henry Lam. My research focuses on uncertainty quantification and decision-making under uncertainty."
+  />
+
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large"
+  />
+
+  <link
+    rel="canonical"
+    href="https://arindamroyc1.github.io/"
+  />
+
+  <!-- Social-media preview -->
+  <meta property="og:type" content="profile" />
+  <meta
+    property="og:title"
+    content="Arindam Roy Chowdhury • Home"
+  />
+  <meta
+    property="og:description"
+    content="PhD student in IEOR at Columbia University researching uncertainty quantification and decision-making under uncertainty."
+  />
+  <meta
+    property="og:url"
+    content="https://arindamroyc1.github.io/"
+  />
+  <meta
+    property="og:image"
+    content="https://arindamroyc1.github.io/assets/pic_1.png"
+  />
+  <meta
+    property="og:image:alt"
+    content="Portrait of Arindam Roy Chowdhury"
+  />
+  <meta property="og:site_name" content="Arindam Roy Chowdhury" />
+
+  <!-- Structured data for Google -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Arindam Roy Chowdhury",
+      "alternateName": [
+        "Arindam Roy Chowdhury's Homepage",
+        "arindamroyc1.github.io"
+      ],
+      "url": "https://arindamroyc1.github.io/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "Arindam Roy Chowdhury",
+      "url": "https://arindamroyc1.github.io/",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Arindam Roy Chowdhury",
+        "url": "https://arindamroyc1.github.io/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://arindamroyc1.github.io/assets/pic_1.png"
+        },
+        "jobTitle": "PhD Student",
+        "description": "PhD student in Industrial Engineering and Operations Research at Columbia University researching uncertainty quantification and decision-making under uncertainty.",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Columbia University",
+          "url": "https://www.columbia.edu/"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Indian Statistical Institute",
+          "url": "https://www.isical.ac.in/"
+        },
+        "knowsAbout": [
+          "Uncertainty Quantification",
+          "Data-Driven Optimization",
+          "Robust Decision-Making",
+          "Computational Statistics",
+          "Quantitative Finance"
+        ],
+        "sameAs": [
+          "https://github.com/ArindamRoyC1"
+        ]
+      }
+    }
+  ]
+  </script>
 
   <style>
-    :root{
-      /* Theme colors */
-      --bg: #1a1d2f;        /* overall page background */
-      --panel: #1E233A;     /* darker card background for intro section */
-      --panel-2: #1E233A;   /* secondary panel for contact */
+    :root {
+      --bg: #1a1d2f;
+      --panel: #1e233a;
       --text: #e8ecf3;
       --muted: #9aa3b2;
       --link: #3b82f6;
       --radius: 18px;
-      --shadow: 0 10px 28px rgba(0,0,0,.28);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--link);text-decoration:none;font-weight:500}
-    a:hover{text-decoration:underline}
-
-    /* Header / Nav */
-    header{
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px) saturate(140%);
-      background: linear-gradient(to bottom, rgba(26,29,47,.9), rgba(26,29,47,.6));
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
-    .navbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    h1{margin:0;font-weight:800;letter-spacing:.3px}
-    h1 i{font-style:normal;background:linear-gradient(90deg,#fff,#bfe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-    nav{display:flex;gap:14px;flex-wrap:wrap}
-    nav a{padding:8px 12px;border-radius:10px;color:var(--text);opacity:.95}
-    nav a:hover{background:rgba(255,255,255,.06);opacity:1}
-
-    /* Card */
-    .hero{padding:36px 0 10px}
-    .intro-card{
-      display:grid;
-      gap:24px;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items:stretch;
-      background:var(--panel);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
     }
 
-    .image-box{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 12px 34px rgba(0,0,0,.35);
+    * {
+      box-sizing: border-box;
     }
 
-    .about h2{margin:0 0 8px;font-size:1.55rem}
-    .about h2 i{font-style:normal;color:#fff}
-    .about p{margin:10px 0;color:var(--text)}
-
-    .interests{
-      grid-column:1 / -1;
-      margin-top:20px;
-    }
-    .interests h3{margin:0 0 10px;font-size:1.1rem;color:var(--muted)}
-    .pillset{display:flex;flex-wrap:wrap;gap:12px}
-    .pill{
-      font-size:.9rem;color:var(--text);opacity:.9;
-      border:1px solid rgba(255,255,255,.08);
-      padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03)
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
     }
 
-    /* Contact */
-    #contact{
-      margin:26px 0 40px;
-      background:var(--panel-2);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius);
-      padding:18px 20px;
-      box-shadow:var(--shadow);
-    }
-    #contact h3{margin:0 0 8px}
-    #contact a{
+    a {
       color: var(--link);
       text-decoration: none;
       font-weight: 500;
     }
-    #contact a:hover{
+
+    a:hover {
       text-decoration: underline;
     }
 
-    footer{color:var(--muted);font-size:.9rem;margin:18px 0 28px}
+    /* Header and navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px) saturate(140%);
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 29, 47, 0.9),
+        rgba(26, 29, 47, 0.6)
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
 
-    @media (max-width: 899px){
-      .intro-card{grid-template-columns:1fr}
-      .image-box{height:auto}
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    h1 i {
+      font-style: normal;
+      background: linear-gradient(90deg, #ffffff, #bfe9ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: var(--text);
+      opacity: 0.95;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.06);
+      opacity: 1;
+    }
+
+    /* Introduction */
+    .hero {
+      padding: 36px 0 10px;
+    }
+
+    .intro-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: stretch;
+      gap: 24px;
+      padding: 22px;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      margin: 0;
+    }
+
+    .image-box {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+    }
+
+    .about h2 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+    }
+
+    .about h2 i {
+      color: #ffffff;
+      font-style: normal;
+    }
+
+    .about p {
+      margin: 10px 0;
+      color: var(--text);
+    }
+
+    /* Research interests */
+    .interests {
+      grid-column: 1 / -1;
+      margin-top: 20px;
+    }
+
+    .interests h3 {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .pillset {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+    }
+
+    footer {
+      margin: 18px 0 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 899px) {
+      .intro-card {
+        grid-template-columns: 1fr;
+      }
+
+      .image-box {
+        height: auto;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap navbar">
       <h1><i>Arindam Roy Chowdhury</i></h1>
-      <nav>
+
+      <nav aria-label="Main navigation">
         <a href="index.html" aria-current="page">About</a>
         <a href="research.html">Research</a>
         <a href="workex.html">Work Experience</a>
-        <a href="assets/Arindam_CV.pdf" target="_blank" rel="noopener">CV</a>
+        <a
+          href="assets/Arindam_CV.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV
+        </a>
       </nav>
     </div>
   </header>
@@ -129,62 +327,117 @@
   <main class="wrap">
     <section class="hero">
       <div class="intro-card">
-        <figure>
-          <img src="assets/pic_1.png" alt="Portrait of Arindam Roy Chowdhury" class="image-box" />
+        <figure class="portrait">
+          <img
+            src="assets/pic_1.png"
+            alt="Portrait of Arindam Roy Chowdhury"
+            class="image-box"
+          />
         </figure>
 
         <div class="about">
           <h2><i>A Little About Me…</i></h2>
+
           <p>
-            I’m a fourth-year PhD student at
-            <a href="https://www.columbia.edu/" target="_blank" rel="noopener"><strong>Columbia University</strong></a>
-            in the Department of Industrial Engineering &amp; Operations Research
-            (<a href="https://ieor.columbia.edu/" target="_blank" rel="noopener"><strong>IEOR</strong></a>),
+            I am a PhD student in the Department of Industrial
+            Engineering &amp; Operations Research
+            (<a
+              href="https://ieor.columbia.edu/"
+              target="_blank"
+              rel="noopener"
+            ><strong>IEOR</strong></a>)
+            at
+            <a
+              href="https://www.columbia.edu/"
+              target="_blank"
+              rel="noopener"
+            ><strong>Columbia University</strong></a>,
             advised by
-            <a href="https://www.columbia.edu/~khl2114/" target="_blank" rel="noopener"><strong>Prof. Henry Lam</strong></a>.
-            My research focuses on uncertainty quantification and decision-making under uncertainty—developing methods that remain reliable when data or environments shift.
+            <a
+              href="https://www.columbia.edu/~khl2114/"
+              target="_blank"
+              rel="noopener"
+            ><strong>Prof. Henry Lam</strong></a>.
+            My research focuses on uncertainty quantification and
+            decision-making under uncertainty.
           </p>
+
           <p>
-            My academic background includes bachelor’s and master’s degrees in Statistics from the
-            <a href="https://www.isical.ac.in/" target="_blank" rel="noopener"><strong>Indian Statistical Institute, Kolkata</strong></a>.
-            I bring industry experience from my time at
-            <a href="https://www.capitalone.com/" target="_blank" rel="noopener"><strong>Capital One</strong></a>,
-            where I worked on modeling loan default rates and developed tools for handling missing values in decision-tree models.
-            I also spent a summer working with the
-            <a href="https://www.nasa.gov/langley/" target="_blank" rel="noopener"><strong>NASA Langley Research Center</strong></a>,
-            where I focused on multivariate flight data modeling.
+            My academic background includes bachelor’s and master’s
+            degrees in Statistics from the
+            <a
+              href="https://www.isical.ac.in/"
+              target="_blank"
+              rel="noopener"
+            ><strong>Indian Statistical Institute, Kolkata</strong></a>.
           </p>
+
           <p>
-            Outside work, I enjoy chess, table tennis, and puzzle solving.
-            I also love to travel and often spend time on long walks through new neighborhoods,
-            enjoying the chance to explore and observe everyday life in different places.
+            Most recently, I worked as a Quantitative Researcher Intern
+            at
+            <a
+              href="https://sig.com/"
+              target="_blank"
+              rel="noopener"
+            ><strong>Susquehanna International Group (SIG)</strong></a>,
+            where I developed and evaluated systematic equity trading
+            strategies using signals derived from options-market data.
           </p>
+
           <p>
-            If you’re exploring robustness, data-driven optimization, or adjacent topics, I’m always open to a conversation.
+            Previously, at
+            <a
+              href="https://www.capitalone.com/"
+              target="_blank"
+              rel="noopener"
+            ><strong>Capital One</strong></a>,
+            I modeled loan default rates and developed tools for handling
+            missing values in decision-tree models. I also spent a
+            summer at
+            <a
+              href="https://www.nasa.gov/langley/"
+              target="_blank"
+              rel="noopener"
+            ><strong>NASA Langley Research Center</strong></a>,
+            working on multivariate flight-data modeling.
+          </p>
+
+          <p>
+            Outside work, I enjoy chess, table tennis, and puzzle
+            solving. I also love to travel and often spend time on long
+            walks through new neighborhoods, enjoying the opportunity to
+            explore and observe everyday life in different places.
+          </p>
+
+          <p>
+            If you’re exploring robustness, data-driven optimization,
+            quantitative finance, or adjacent topics, I’m always open to
+            a conversation.
           </p>
         </div>
 
         <div class="interests">
           <h3>Interests</h3>
+
           <div class="pillset">
             <span class="pill">Uncertainty Quantification</span>
             <span class="pill">Data-Driven Optimization</span>
             <span class="pill">Robust Decision-Making</span>
-            <span class="pill">Finance</span>
+            <span class="pill">Quantitative Finance</span>
             <span class="pill">Computational Statistics</span>
           </div>
         </div>
       </div>
     </section>
 
-
-    <footer class="wrap">
-      © <span id="y">2025</span> Arindam Roy Chowdhury
+    <footer>
+      © <span id="year"></span> Arindam Roy Chowdhury
     </footer>
   </main>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 </body>
 </html>

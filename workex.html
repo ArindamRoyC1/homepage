@@ -1,55 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CWKTPSGQF7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWKTPSGQF7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-CWKTPSGQF7');
-</script>
+    gtag('config', 'G-CWKTPSGQF7');
+  </script>
+
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Work Experience — Arindam Roy Chowdhury</title>
 
   <style>
     :root{
-      --bg:#1a1d2f;   /* slightly lighter background */
-      --card:#20253F; /* slightly lighter card color */
-      --text:#e8ecf3; --muted:#9aa3b2;
+      --bg:#1a1d2f;
+      --card:#20253f;
+      --text:#e8ecf3;
+      --muted:#9aa3b2;
       --link:#3b82f6;
-      --radius:16px; --shadow:0 8px 24px rgba(0,0,0,.25);
+      --accent:#60a5fa;
+      --radius:16px;
+      --shadow:0 8px 24px rgba(0,0,0,.25);
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif}
+
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif;
+    }
+
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
 
     header{
-      position:sticky;top:0;z-index:10;
+      position:sticky;
+      top:0;
+      z-index:10;
       backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(to bottom, rgba(26,29,47,.9), rgba(26,29,47,.6));
+      background:linear-gradient(to bottom,rgba(26,29,47,.9),rgba(26,29,47,.6));
       border-bottom:1px solid rgba(255,255,255,.06);
     }
+
     .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
-    header .top{display:flex;align-items:center;gap:18px;justify-content:space-between}
+
+    header .top{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      justify-content:space-between;
+    }
+
     h1{margin:0;font-weight:800;letter-spacing:.3px}
-    h1 i{font-style:normal;background:linear-gradient(90deg,#fff,#bfe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    h1 i{
+      font-style:normal;
+      background:linear-gradient(90deg,#fff,#bfe9ff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
     nav{display:flex;gap:16px;flex-wrap:wrap}
     nav a{padding:8px 12px;border-radius:10px;color:var(--text);opacity:.95}
-    nav a:hover{background:rgba(255,255,255,.06);opacity:1}
+    nav a:hover{background:rgba(255,255,255,.06);opacity:1;text-decoration:none}
 
     main{padding:28px 0}
-    section.block{background:var(--card);border-radius:var(--radius);
-      padding:18px;border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow);margin-bottom:22px}
-    h2{margin:4px 0 12px;font-size:1.35rem}
+
+    section.block{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:24px 26px;
+      border:1px solid rgba(255,255,255,.06);
+      box-shadow:var(--shadow);
+      margin-bottom:22px;
+    }
+
+    h2{
+      margin:0 0 18px;
+      font-size:1.35rem;
+      letter-spacing:.1px;
+    }
+
     ul.clean{list-style:none;margin:0;padding:0}
-    .item{padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
-    .item + .item{margin-top:10px}
-    .title{font-weight:700}
-    .desc{color:var(--muted);font-size:.95rem;margin:6px 0 6px}
+
+    .entry{
+      position:relative;
+      padding:2px 0 20px 22px;
+      border-left:2px solid rgba(96,165,250,.35);
+    }
+
+    .entry::before{
+      content:"";
+      position:absolute;
+      top:7px;
+      left:-6px;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 4px var(--card);
+    }
+
+    .entry:last-child{padding-bottom:2px}
+
+    .entry-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .title{font-weight:700;color:var(--text)}
+
+    .company-link{color:#cfe8ff}
+    .company-link:hover{color:#fff}
+
+    .date{
+      flex:0 0 auto;
+      color:var(--muted);
+      font-size:.9rem;
+      white-space:nowrap;
+    }
+
+    .desc{
+      color:var(--muted);
+      font-size:.95rem;
+      margin:6px 0 0;
+      max-width:940px;
+    }
+
+    .subroles{margin-top:10px}
+
+    .subrole{padding:10px 0 2px}
+
+    .subrole + .subrole{
+      margin-top:14px;
+      padding-top:0;
+    }
+
+    .subrole-head{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .role{font-weight:600;color:var(--text)}
+
+    @media (max-width:720px){
+      header .top{align-items:flex-start;flex-direction:column}
+      nav{gap:6px}
+      nav a{padding:7px 9px}
+      section.block{padding:22px 20px}
+      .entry-head,.subrole-head{align-items:flex-start;flex-direction:column;gap:2px}
+      .date{white-space:normal}
+    }
   </style>
 </head>
 
@@ -73,32 +186,61 @@
       <h2>Industry Experience</h2>
       <ul class="clean">
 
-        <li class="item">
-          <div class="title">NASA Langley Research Center — Research Intern (Jul–Sep 2024)</div>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title"><a class="company-link" href="https://sig.com/" target="_blank" rel="noopener">Susquehanna International Group (SIG)</a> — Quantitative Researcher Intern</div>
+            <div class="date">Jun–Aug 2026</div>
+          </div>
           <p class="desc">
-            Built a tractable optimization framework for multivariate flight-data modeling using polynomial features; delivered an internal Python package (with a MATLAB follow-on) and explored estimation with non-normalized statistical models.
+            Developed end-to-end automated equity-trading strategies using predictive signals derived from options-market data. Evaluated and maintained the strategies on sequentially released out-of-sample data, ranking in the top quartile among quantitative research interns and new hires on the strategy P&amp;L leaderboard.
           </p>
         </li>
 
-        <li class="item">
-          <div class="title">Capital One Financial Services — Associate (Jul 2021–Jul 2022)</div>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title"><a class="company-link" href="https://www.nasa.gov/langley/" target="_blank" rel="noopener">NASA Langley Research Center</a> — Research Intern</div>
+            <div class="date">Jul–Sep 2024</div>
+          </div>
           <p class="desc">
-            Developed risk-management models to predict probability of default for real-estate and low-default commercial portfolios.
+            Built a tractable optimization framework for multivariate flight-data modeling using polynomial features; delivered an internal Python package, with a MATLAB follow-on, and explored estimation with non-normalized statistical models.
           </p>
         </li>
 
-        <li class="item">
-          <div class="title">Capital One — Data Science Intern (May–Jul 2020)</div>
-          <p class="desc">
-            Developed a complete procedure for training decision-tree classifiers when datasets contain missing values—detecting the type of missingness and applying suitable treatments automatically. Implemented the end-to-end workflow as a user-friendly Python tool used internally; received a job offer as a Data Science Associate at the end of the internship.  
-            <a href="assets/patent.pdf" target="_blank" rel="noopener">patent</a>
-          </p>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title"><a class="company-link" href="https://www.capitalone.com/" target="_blank" rel="noopener">Capital One</a></div>
+          </div>
+          <div class="subroles">
+            <div class="subrole">
+              <div class="subrole-head">
+                <div class="role">Associate</div>
+                <div class="date">Jul 2021–Jul 2022</div>
+              </div>
+              <p class="desc">
+                Developed risk-management models to predict probability of default for real-estate and low-default commercial portfolios.
+              </p>
+            </div>
+
+            <div class="subrole">
+              <div class="subrole-head">
+                <div class="role">Data Science Intern</div>
+                <div class="date">May–Jul 2020</div>
+              </div>
+              <p class="desc">
+                Developed an end-to-end procedure for training decision-tree classifiers on datasets containing missing values, including automatic detection of missingness type and selection of suitable treatments. Implemented the workflow as an internal Python tool and received a full-time Data Science Associate offer at the end of the internship.
+                <a href="assets/patent.pdf" target="_blank" rel="noopener">Patent</a>
+              </p>
+            </div>
+          </div>
         </li>
 
-        <li class="item">
-          <div class="title">Centre for Science of Student Learning — Research Intern (May–Jul 2019)</div>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title"><a class="company-link" href="https://www.cssl.in/" target="_blank" rel="noopener">Centre for Science of Student Learning</a> — Research Intern</div>
+            <div class="date">May–Jul 2019</div>
+          </div>
           <p class="desc">
-            Research on student learning using <em>Classical Test Theory</em> and <em>Psychometrics</em>. Contributed to an effect-size project (d-value, simulations, R tooling, Andhra Pradesh outcomes) and a teaching-mentality project (factor analysis of teacher questionnaires).
+            Conducted research on student learning using <em>Classical Test Theory</em> and <em>Psychometrics</em>. Contributed to an effect-size project involving simulations, R tooling, and Andhra Pradesh outcomes, and to a study of teaching mentality using factor analysis of teacher questionnaires.
           </p>
         </li>
 
@@ -109,24 +251,37 @@
     <section class="block">
       <h2>Teaching Experience</h2>
       <ul class="clean">
-<li class="item">
-          <div class="title">Teaching Assistant, IEOR E4404: Simulation — Columbia University (Spring 2025)</div>
-          <p class="desc">Instructor: Prof. Henry Lam.</p>
+
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title">Teaching Assistant, IEOR E4404: Simulation — Columbia University</div>
+            <div class="date">Spring 2025</div>
+          </div>
+          <p class="desc">Instructor: <a href="https://www.engineering.columbia.edu/faculty-staff/directory/henry-lam" target="_blank" rel="noopener">Prof. Henry Lam</a>.</p>
         </li>
 
-        <li class="item">
-          <div class="title">Teaching Assistant, IEOR E4707: Continuous-Time Models — Columbia University (Spring 2024)</div>
-          <p class="desc">Instructor: Prof. Xunyu Zhou.</p>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title">Teaching Assistant, IEOR E4707: Continuous-Time Models — Columbia University</div>
+            <div class="date">Spring 2024</div>
+          </div>
+          <p class="desc">Instructor: <a href="https://www.engineering.columbia.edu/faculty-staff/directory/xunyu-zhou" target="_blank" rel="noopener">Prof. Xunyu Zhou</a>.</p>
         </li>
 
-        <li class="item">
-          <div class="title">Teaching Assistant, IEOR E4106: Stochastic Models — Columbia University (Fall 2023)</div>
-          <p class="desc">Instructor: Prof. Ton Dieker.</p>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title">Teaching Assistant, IEOR E4106: Stochastic Models — Columbia University</div>
+            <div class="date">Fall 2023</div>
+          </div>
+          <p class="desc">Instructor: <a href="https://www.engineering.columbia.edu/faculty-staff/directory/ton-dieker" target="_blank" rel="noopener">Prof. Ton Dieker</a>.</p>
         </li>
 
-        <li class="item">
-          <div class="title">Teaching Assistant, IEOR E4150: Introduction to Statistics &amp; Probability — Columbia University (Spring 2023)</div>
-          <p class="desc">Instructor: Prof. Ton Dieker.</p>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title">Teaching Assistant, IEOR E4150: Introduction to Statistics &amp; Probability — Columbia University</div>
+            <div class="date">Spring 2023</div>
+          </div>
+          <p class="desc">Instructor: <a href="https://www.engineering.columbia.edu/faculty-staff/directory/ton-dieker" target="_blank" rel="noopener">Prof. Ton Dieker</a>.</p>
         </li>
 
       </ul>
@@ -137,14 +292,19 @@
       <h2>Reviewing &amp; Editorial Service</h2>
       <ul class="clean">
 
-        <li class="item">
-          <div class="title">Reviewed for Journal</div>
-          <p class="desc">Operations Research Letters (2024).</p>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title">Journal Reviewer — Operations Research Letters</div>
+            <div class="date">2024</div>
+          </div>
         </li>
 
-        <li class="item">
-          <div class="title">Conference Editing/Support</div>
-          <p class="desc">Contributed to editing papers for the Winter Simulation Conference (WSC) 2023.</p>
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title">Conference Editing and Support — Winter Simulation Conference</div>
+            <div class="date">2023</div>
+          </div>
+          <p class="desc">Contributed to editing conference papers.</p>
         </li>
 
       </ul>
