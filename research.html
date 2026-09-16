@@ -68,20 +68,16 @@
       margin:0 0 16px;
       padding-bottom:2px;
       color:var(--blue);
-      border-bottom:1px solid var(--rule);
-      font-size:1.28rem;
+      border-bottom:3px double var(--rule);
+      font-size:1.55rem;
       line-height:1.2;
     }
 
-    section:first-child h2{
-      font-size:1.55rem;
-      border-bottom:3px double var(--rule);
-    }
 
     ul.clean,ul.early{
       margin:0;
-      padding-left:38px;
-      list-style-type:square;
+      padding-left:0;
+      list-style-type:none;
     }
 
     .item,.early > li{padding-left:1px;margin:0 0 25px}
@@ -98,7 +94,11 @@
     }
     .desc{margin:4px 0;color:var(--muted)}
     .links{margin-top:2px}
-    .links a{margin-right:8px}
+    .links a{margin-right:0}
+    .link-ref{display:inline-block;margin-right:8px}
+    ul.description{margin:6px 0;padding-left:24px;list-style:disc;color:var(--muted)}
+    ul.description li{margin:4px 0}
+    .publication{margin-top:4px}
     .award{margin-top:2px;font-style:italic;color:var(--muted)}
     .highlight-name{color:#222;font-weight:600}
     .equal-note{font-size:.9em;color:var(--muted)}
@@ -111,7 +111,7 @@
       nav{flex-direction:row;flex-wrap:wrap;gap:7px 18px}
       nav a{margin:0}
       .content{padding:16px}
-      ul.clean,ul.early{padding-left:24px}
+      ul.clean,ul.early{padding-left:0}
     }
   </style>
 </head>
@@ -136,12 +136,24 @@
         <li class="item">
           <div class="title">Efficient Uncertainty Quantification of Bagging via the Cheap Bootstrap</div>
           <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</div>
-          <div class="award">Student Paper Competition Winner, New England Statistics Symposium (NESS), 2026</div>
-          <p class="desc">
-            Developed a lightweight bootstrap framework that provides asymptotically exact confidence intervals for bagged predictors using a small, fixed number of resamples as bag size grows. Applicable to Random Forests and bagged estimators in stochastic optimization.
-          </p>
+          <ul class="description">
+            <li>Developed a lightweight bootstrap framework that provides asymptotically exact confidence intervals for bagged predictors using a small, fixed number of resamples as bag size grows.</li>
+            <li>Applicable to Random Forests and bagged estimators in stochastic optimization.</li>
+          </ul>
+          <div class="publication">A preliminary version appeared in <em><a href="https://ieeexplore.ieee.org/iel8/11338806/11338851/11339034.pdf" target="_blank" rel="noopener">Proceedings of the 2025 Winter Simulation Conference</a></em> (WSC).</div>
+          <div class="award">Best Student Paper Award, NESS 2026.</div>
+        </li>
+
+        <!-- Sliced-Normal NASA -->
+        <li class="item">
+          <div class="title">Quantification and Decomposition of Uncertainty Using Sliced-Normal Distribution: With Applications to NASA Data</div>
+          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Crespo, L. G., Lam, H.</div>
+          <ul class="description">
+            <li>Developed a scalable framework for modeling complex multivariate distributions with Sliced-Normal models.</li>
+            <li>Reformulated parameter estimation as a convex positive-semidefinite optimization problem, established universal approximation on compact domains, and introduced a block-assembly method for higher-dimensional NASA loss-of-control flight data.</li>
+          </ul>
           <div class="links">
-            <a href="https://ieeexplore.ieee.org/iel8/11338806/11338851/11339034.pdf" target="_blank" rel="noopener"><i>Proceedings of the 2025 Winter Simulation Conference (WSC)</i>, pp. 3442–3453, IEEE, 2025</a>.
+            <span class="link-ref">[<a href="https://arxiv.org/abs/2608.14878" target="_blank" rel="noopener">arXiv</a>]</span>
           </div>
         </li>
 
@@ -149,72 +161,54 @@
         <li class="item">
           <div class="title">Superiority of Naïve Optimization via Stochastic Dominance</div>
           <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</div>
-          <p class="desc">
-            Theoretically established that naive methods such as Empirical Risk Minimization (ERM) can outperform Distributionally Robust Optimization (DRO) and regularization in minimizing worst-case regret under joint data and distributional uncertainty, leveraging generalized symmetry arguments. Demonstrated effectiveness under standard distribution-shift regimes.
-          </p>
+          <ul class="description">
+            <li>Theoretically established that naive methods such as Empirical Risk Minimization (ERM) can outperform Distributionally Robust Optimization (DRO) and regularization in minimizing worst-case regret under joint data and distributional uncertainty, leveraging generalized symmetry arguments.</li>
+            <li>Demonstrated effectiveness under standard distribution-shift regimes.</li>
+          </ul>
           <div class="links">
-            <a href="assets/Joint_Uncertainty_Slides.pdf" target="_blank" rel="noopener">slides</a>
+            <span class="link-ref">[<a href="assets/Joint_Uncertainty_Slides.pdf" target="_blank" rel="noopener">Slides</a>]</span>
           </div>
-        </li>
-
-        <!-- Sliced-Normal NASA -->
-        <li class="item">
-          <div class="title">Quantification and Decomposition of Uncertainty Using Sliced-Normal Distribution: With Applications to NASA Data</div>
-          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Crespo, L. G., Lam, H.</div>
-          <p class="desc">
-            Developed a scalable framework for modeling complex multivariate distributions with Sliced-Normal models. Reformulated parameter estimation as a convex positive-semidefinite optimization problem, established universal approximation on compact domains, and introduced a block-assembly method for higher-dimensional NASA loss-of-control flight data.
-          </p>
-          <div class="links">
-            <a href="https://arxiv.org/abs/2608.14878" target="_blank" rel="noopener">arXiv:2608.14878</a>
-          </div>
-        </li>
-
-        <!-- Fantasy Sports -->
-        <li class="item">
-          <div class="title">Fantasy Sports User Behavior Modeling</div>
-          <div class="authors">Ongoing collaboration with Dream Sports</div>
-          <p class="desc">
-            Identifies platform actions, such as promotions and incentives, that causally impact user engagement in fantasy sports at production scale.
-          </p>
         </li>
 
         <!-- Rare-event EVT -->
         <li class="item">
           <div class="title">Estimation of Rare-Event Probabilities Using Extreme Value Theory</div>
-          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H.</div>
-          <p class="desc">
-            Estimates rare-event probabilities by modeling the tail behavior using the Generalized Pareto Distribution (GPD). Investigates GPD-based methods as a model-agnostic alternative to importance sampling for rare-event simulation.
-          </p>
+          <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Lam, H., Long, D.</div>
+          <ul class="description">
+            <li>Estimates rare-event probabilities by modeling the tail behavior using the Generalized Pareto Distribution (GPD).</li>
+            <li>Investigates GPD-based methods as a model-agnostic alternative to importance sampling for rare-event simulation.</li>
+          </ul>
         </li>
 
         <!-- Bayesian Trees -->
         <li class="item">
           <div class="title">Bayesian Nonparametric Generalization of Tree-Based ML Approaches</div>
           <div class="authors"><span class="highlight-name">Roy Chowdhury, A.</span>, Bhattacharya, S.</div>
-          <p class="desc">
-            Proposed a Bayesian nonparametric mixture model of decision trees with a random number of components, using a Dirichlet Process prior to flexibly capture complex decision boundaries.
-            <br><em>M.Stat dissertation work</em>
-          </p>
+          <ul class="description">
+            <li>Proposed a Bayesian nonparametric mixture model of decision trees with a random number of components, using a Dirichlet Process prior to flexibly capture complex decision boundaries.</li>
+          </ul>
+          <div class="desc"><em>M.Stat dissertation work</em></div>
           <div class="links">
-            <a href="assets/Mstat_dissertation_report.pdf" target="_blank" rel="noopener">report</a>
-            <a href="assets/M_stat_dissertation_slides.pdf" target="_blank" rel="noopener">slides</a>
+            <span class="link-ref">[<a href="assets/Mstat_dissertation_report.pdf" target="_blank" rel="noopener">Report</a>]</span>
+            <span class="link-ref">[<a href="assets/M_stat_dissertation_slides.pdf" target="_blank" rel="noopener">Slides</a>]</span>
           </div>
         </li>
 
         <!-- Accelerography -->
         <li class="item">
-          <div class="title">Accelerography: Feasibility of Gesture Typing using Accelerometer</div>
+          <div class="title">Accelerography: Feasibility of Gesture Typing Using Accelerometer</div>
           <div class="authors">
             <span class="highlight-name">Roy Chowdhury, A.*</span>, 
             Dalal, A.*, 
             Sen, S.*
           </div>
-          <p class="desc">
-            Designed intuitive motion gestures for the English alphabet, enabling text input by physically moving a phone. Developed and implemented an R-based pipeline to classify these gestures using accelerometer data.
-            <br><span class="equal-note">* Equal contribution</span>
-          </p>
+          <ul class="description">
+            <li>Designed intuitive motion gestures for the English alphabet, enabling text input by physically moving a phone.</li>
+            <li>Developed and implemented an R-based pipeline to classify these gestures using accelerometer data.</li>
+          </ul>
+          <div class="desc"><span class="equal-note">* Equal contribution</span></div>
           <div class="links">
-            <a href="https://arxiv.org/abs/2003.14310" target="_blank" rel="noopener">arXiv:2003.14310</a>
+            <span class="link-ref">[<a href="https://arxiv.org/abs/2003.14310" target="_blank" rel="noopener">arXiv</a>]</span>
           </div>
         </li>
       </ul>
@@ -254,27 +248,27 @@
       <h2>Early Research &amp; Project Reports</h2>
       <ul class="early">
         <li>
-          <b>Causal Inference using Directed Acyclic Graphical (DAG) Models</b> (Nov–Dec 2019)  
+          <b>Causal Inference Using Directed Acyclic Graphical (DAG) Models</b> (Nov–Dec 2019)  
           <div class="authors">
-            Subhrajyoty Roy, Abhinandan Dalal, <span class="highlight-name">Arindam Roy Chowdhury</span>
+            Roy, S., Dalal, A., <span class="highlight-name">Roy Chowdhury, A.</span>
           </div>
-          <p class="desc">
-            Explored the need of studying causal inference as a separate topic, and did a basic review of causal inference
-            using directed acyclic graphs. Performed analysis of causal inference on different datasets, to estimate the
-            underlying causal model. Noted some significant implications for Tea auction mechanism in India.  
-            <a href="assets/Causal_DAG.pdf" target="_blank" rel="noopener">report</a>
-          </p>
+          <ul class="description">
+            <li>Explored the need of studying causal inference as a separate topic, and did a basic review of causal inference using directed acyclic graphs.</li>
+            <li>Performed analysis of causal inference on different datasets, to estimate the underlying causal model.</li>
+            <li>Noted some significant implications for Tea auction mechanism in India.</li>
+          </ul>
+          <div class="links"><span class="link-ref">[<a href="assets/Causal_DAG.pdf" target="_blank" rel="noopener">Report</a>]</span></div>
         </li>
 
         <li>
           <b>Modelling Summit Success Rate of Mt. Rainier</b> (Nov–Dec 2019)  
           <div class="authors">
-            Subhrajyoty Roy, Abhinandan Dalal, <span class="highlight-name">Arindam Roy Chowdhury</span>, Abhishek Bakshi
+            Roy, S., Dalal, A., <span class="highlight-name">Roy Chowdhury, A.</span>, Bakshi, A.
           </div>
-          <p class="desc">
-            Modeled team size as a Poisson mixture and analyzed summit success rates conditioned on team size, achieving strong predictive performance.  
-            <a href="assets/Mount_Rainer.pdf" target="_blank" rel="noopener">slides</a>
-          </p>
+          <ul class="description">
+            <li>Modeled team size as a Poisson mixture and analyzed summit success rates conditioned on team size, achieving strong predictive performance.</li>
+          </ul>
+          <div class="links"><span class="link-ref">[<a href="assets/Mount_Rainer.pdf" target="_blank" rel="noopener">Slides</a>]</span></div>
         </li>
       </ul>
     </section>

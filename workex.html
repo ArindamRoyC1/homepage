@@ -69,17 +69,19 @@
       margin:0 0 16px;
       padding-bottom:2px;
       color:var(--blue);
-      border-bottom:1px solid var(--rule);
-      font-size:1.28rem;
+      border-bottom:3px double var(--rule);
+      font-size:1.55rem;
       line-height:1.2;
     }
 
-    section:first-child h2{
-      font-size:1.55rem;
-      border-bottom:3px double var(--rule);
-    }
 
-    ul.clean{margin:0;padding-left:38px;list-style-type:square}
+    .service-list{margin:0;padding-left:22px;list-style:disc;font-weight:400}
+    .service-list li{margin:6px 0}
+
+    ul.clean{margin:0;padding:0;list-style:none}
+    ul.details{margin:7px 0 0;padding-left:22px;color:var(--muted);list-style:disc}
+    ul.details li{margin:4px 0}
+    .project{margin:5px 0 0;font-style:italic;color:var(--muted)}
     .entry{margin:0 0 24px;padding-left:1px}
     .entry:last-child{margin-bottom:0}
 
@@ -124,7 +126,7 @@
       nav{flex-direction:row;flex-wrap:wrap;gap:7px 18px}
       nav a{margin:0}
       .content{padding:16px}
-      ul.clean{padding-left:24px}
+      ul.clean{padding-left:0}
       .entry-head,.subrole-head{align-items:flex-start;flex-direction:column;gap:2px}
       .date{white-space:normal}
     }
@@ -144,9 +146,9 @@
 
     <main class="content">
 
-    <!-- Industry Experience -->
+    <!-- Work Experience -->
     <section class="block">
-      <h2>Industry Experience</h2>
+      <h2>Work Experience</h2>
       <ul class="clean">
 
         <li class="entry">
@@ -154,19 +156,11 @@
             <div class="title"><a class="company-link" href="https://sig.com/" target="_blank" rel="noopener">Susquehanna International Group (SIG)</a> — Quantitative Researcher Intern</div>
             <div class="date">Jun–Aug 2026</div>
           </div>
-          <p class="desc">
-            Developed end-to-end automated equity-trading strategies using predictive signals derived from options-market data. Evaluated and maintained the strategies on sequentially released out-of-sample data, ranking in the top quartile among quantitative research interns and new hires on the strategy P&amp;L leaderboard.
-          </p>
-        </li>
-
-        <li class="entry">
-          <div class="entry-head">
-            <div class="title"><a class="company-link" href="https://www.nasa.gov/langley/" target="_blank" rel="noopener">NASA Langley Research Center</a> — Research Intern</div>
-            <div class="date">Jul–Sep 2024</div>
-          </div>
-          <p class="desc">
-            Built a tractable optimization framework for multivariate flight-data modeling using polynomial features; delivered an internal Python package, with a MATLAB follow-on, and explored estimation with non-normalized statistical models.
-          </p>
+          <ul class="details">
+            <li>Developed automated equity-trading strategies using predictive signals derived from options-market data.</li>
+            <li>Evaluated and maintained strategies on sequentially released out-of-sample data spanning 2019–2025.</li>
+            <li>Ranked in the top quartile among quantitative research interns and new hires on the strategy P&amp;L leaderboard.</li>
+          </ul>
         </li>
 
         <li class="entry">
@@ -179,9 +173,9 @@
                 <div class="role">Associate</div>
                 <div class="date">Jul 2021–Jul 2022</div>
               </div>
-              <p class="desc">
-                Developed risk-management models to predict probability of default for real-estate and low-default commercial portfolios.
-              </p>
+              <ul class="details">
+            <li>Developed probability-of-default models for real-estate and low-default commercial loan portfolios.</li>
+          </ul>
             </div>
 
             <div class="subrole">
@@ -189,10 +183,11 @@
                 <div class="role">Data Science Intern</div>
                 <div class="date">May–Jul 2020</div>
               </div>
-              <p class="desc">
-                Developed an end-to-end procedure for training decision-tree classifiers on datasets containing missing values, including automatic detection of missingness type and selection of suitable treatments. Implemented the workflow as an internal Python tool and received a full-time Data Science Associate offer at the end of the internship.
-                <a href="assets/patent.pdf" target="_blank" rel="noopener">Patent</a>
-              </p>
+              <ul class="details">
+            <li>Developed a procedure for handling missing data in decision-tree classifiers, including identifying missingness patterns and selecting appropriate treatments.</li>
+            <li>Implemented the methodology in an internal Python-based decision-tree tool. <a href="assets/patent.pdf" target="_blank" rel="noopener">Patent application</a>.</li>
+            <li>Received a full-time Data Science Associate offer at the end of the internship.</li>
+          </ul>
             </div>
           </div>
         </li>
@@ -202,9 +197,51 @@
             <div class="title"><a class="company-link" href="https://www.cssl.in/" target="_blank" rel="noopener">Centre for Science of Student Learning</a> — Research Intern</div>
             <div class="date">May–Jul 2019</div>
           </div>
-          <p class="desc">
-            Conducted research on student learning using <em>Classical Test Theory</em> and <em>Psychometrics</em>. Contributed to an effect-size project involving simulations, R tooling, and Andhra Pradesh outcomes, and to a study of teaching mentality using factor analysis of teacher questionnaires.
-          </p>
+          <ul class="details">
+            <li>Conducted research on student learning using classical test theory and psychometrics.</li>
+            <li>Contributed to an effect-size study through simulations and R tools, and analyzed teacher questionnaires using factor analysis.</li>
+          </ul>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Industry Collaborations -->
+    <section class="block">
+      <h2>Industry Collaborations</h2>
+      <ul class="clean">
+
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title"><a class="company-link" href="https://www.nasa.gov/langley/" target="_blank" rel="noopener">NASA Langley Research Center</a></div>
+          </div>
+          <p class="project">Modeling Multivariate Dependencies in Flight Data</p>
+          <ul class="details">
+            <li>Formulated a tractable optimization framework for modeling multivariate dependencies in flight data.</li>
+            <li>Developed a Python package for internal use, with a corresponding MATLAB implementation.</li>
+            <li>Developed estimation methods using non-normalized statistical models.</li>
+          </ul>
+        </li>
+
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title"><a class="company-link" href="https://www.dreamsports.group/" target="_blank" rel="noopener">Dream Sports</a></div>
+          </div>
+          <p class="project">Fantasy Sports User Behavior Modeling</p>
+          <ul class="details">
+            <li>Analyzed large-scale transaction and contest-participation data to model fantasy-sports user engagement.</li>
+            <li>Explored time-series and discrete-state models of user spending and contest participation, with the goal of identifying how platform promotions and incentives affect engagement.</li>
+          </ul>
+        </li>
+
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title"><a class="company-link" href="https://www.nyc.gov/site/doc/index.page" target="_blank" rel="noopener">New York City Department of Correction</a></div>
+          </div>
+          <p class="project">Forecasting Supplies for People in Care</p>
+          <ul class="details">
+            <li>Developed demand forecasting methods for a broad range of goods and supplies required by people in care.</li>
+          </ul>
         </li>
 
       </ul>
@@ -214,6 +251,14 @@
     <section class="block">
       <h2>Teaching Experience</h2>
       <ul class="clean">
+
+        <li class="entry">
+          <div class="entry-head">
+            <div class="title">Teaching Assistant, IEOR E4733: Algorithmic Trading — Columbia University</div>
+            <div class="date">Spring 2026</div>
+          </div>
+          <p class="desc">Instructor: <a href="https://www.linkedin.com/in/charles-pehlivanian-b66778129" target="_blank" rel="noopener">Prof. Charles Pehlivanian</a>.</p>
+        </li>
 
         <li class="entry">
           <div class="entry-head">
@@ -253,23 +298,10 @@
     <!-- Reviewing & Editorial Service -->
     <section class="block">
       <h2>Reviewing &amp; Editorial Service</h2>
-      <ul class="clean">
-
-        <li class="entry">
-          <div class="entry-head">
-            <div class="title">Journal Reviewer — Operations Research Letters</div>
-            <div class="date">2024</div>
-          </div>
-        </li>
-
-        <li class="entry">
-          <div class="entry-head">
-            <div class="title">Conference Editing and Support — Winter Simulation Conference</div>
-            <div class="date">2023</div>
-          </div>
-          <p class="desc">Contributed to editing conference papers.</p>
-        </li>
-
+      <ul class="service-list">
+        <li>Journal Reviewer — INFORMS Journal on Computing (2026)</li>
+        <li>Journal Reviewer — Operations Research Letters (2024)</li>
+        <li>Conference Editing and Support — Winter Simulation Conference (2023)</li>
       </ul>
     </section>
 
